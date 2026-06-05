@@ -19,7 +19,7 @@
 body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:var(--cream);color:var(--text);font-size:14px;line-height:1.7;}
 
 /* COVER */
-.cover{background:linear-gradient(145deg,#5f7f65 0%,#8aab8f 40%,#a5c4aa 70%,#c9a07a 100%);color:white;text-align:center;padding:52px 24px 44px;position:relative;overflow:hidden;}
+.cover{background:linear-gradient(rgba(0,0,0,0.38),rgba(0,0,0,0.38)),url(4904587255446361935.003f3be978f68ddba8d47636763c174b.23071414.jpg) center/cover no-repeat;color:white;text-align:center;padding:52px 24px 44px;position:relative;overflow:hidden;}
 .cover h1{font-size:2.1em;font-weight:800;letter-spacing:.06em;text-shadow:0 2px 10px rgba(0,0,0,.25);}
 .cover .sub{font-size:1em;opacity:.85;margin-top:6px;}
 .cover .dates{font-size:1.3em;font-weight:700;margin-top:12px;display:inline-block;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);border-radius:30px;padding:7px 26px;}
@@ -68,14 +68,14 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:var(
 .parallel-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;}
 .pt{border-collapse:separate;border-spacing:0;width:100%;min-width:660px;}
 .pt thead th{padding:11px 13px 9px;font-size:.83em;font-weight:700;border-bottom:3px solid;white-space:nowrap;vertical-align:top;}
-.pt thead th.th-t{background:#f5f0ea;color:var(--text-mid);border-bottom-color:#c5bdb0;text-align:center;width:68px;}
+.pt thead th.th-t{background:#f5f0ea;color:var(--text-mid);border-bottom-color:#c5bdb0;text-align:center;width:68px;position:sticky;left:0;z-index:3;}
 .pt thead th.th-h{background:var(--sage-bg);color:var(--sage-dark);border-bottom-color:var(--sage);}
 .pt thead th.th-k{background:var(--peach-bg);color:var(--peach-dark);border-bottom-color:var(--peach);}
 .pt thead th.th-l{background:var(--rose-bg);color:var(--rose-dark);border-bottom-color:var(--rose);}
 .pt thead th.th-c{background:var(--blue-bg);color:var(--blue-dark);border-bottom-color:var(--blue);}
 .pt thead th.th-x{background:var(--lav-bg);color:var(--lav-dark);border-bottom-color:var(--lav);}
 .pt tbody td{padding:10px 13px;vertical-align:top;border-bottom:1px solid var(--border);font-size:.83em;}
-.pt tbody td.td-t{background:#f5f0ea;text-align:center;font-weight:700;font-size:.9em;color:var(--text-mid);vertical-align:middle;white-space:nowrap;}
+.pt tbody td.td-t{background:#f5f0ea;text-align:center;font-weight:700;font-size:.9em;color:var(--text-mid);vertical-align:middle;white-space:nowrap;position:sticky;left:0;z-index:2;}
 .pt tbody td.td-h{background:#fafcfa;}
 .pt tbody td.td-k{background:#fdfaf6;}
 .pt tbody td.td-l{background:#fdfafa;}
@@ -123,9 +123,11 @@ tr:last-child td{border-bottom:none;}
 
 /* DRINKS */
 .dt th{background:var(--sage-dark);color:white;text-align:center;font-size:.78em;padding:8px 6px;}
-.dt th.tn{background:#7a6a60;text-align:left;padding:8px 11px;}
+.dt th.tn{background:#7a6a60;text-align:left;padding:8px 11px;position:sticky;left:0;z-index:2;}
 .dt .dn{font-size:.85em;}
 .dt td{text-align:center;}
+.dt td:first-child{position:sticky;left:0;background:white;z-index:1;font-size:.85em;text-align:left;padding:7px 11px;}
+.dt tr:nth-child(even) td:first-child{background:#f8f8f8;}
 .don{font-weight:800;color:var(--sage-dark);}
 
 /* DAY2 */
@@ -141,7 +143,9 @@ tr:last-child td{border-bottom:none;}
 /* MEMBER TABLE */
 .mt th{background:var(--rose-dark);color:white;}
 .mt tr:nth-child(even) td{background:#fdf8fd;}
-.mt td.mn{font-weight:700;}
+.mt td.mn{font-weight:700;position:sticky;left:0;background:white;z-index:1;}
+.mt tr:nth-child(even) td.mn{background:#fdf8fd;}
+.mt th:first-child{position:sticky;left:0;z-index:2;}
 .badge{display:inline-block;padding:2px 8px;border-radius:11px;font-size:.76em;font-weight:700;white-space:nowrap;}
 .bg{background:#d4ecd4;color:#2d6b2d;}
 .bo{background:#fde8c8;color:#8a5a10;}
@@ -175,7 +179,7 @@ tr:last-child td{border-bottom:none;}
   <h1>Skip F 軽井沢合宿</h1>
   <div class="sub">しおり</div>
   <div class="dates">2026年6月6日（土）〜 7日（日）</div>
-  <div class="draft">⚠️ 暫定版 ― 配車・2日目行程は変更の可能性があります</div>
+  
 </div>
 
 <nav class="nav">
@@ -185,10 +189,11 @@ tr:last-child td{border-bottom:none;}
   <a href="#photo">📷 撮影</a>
   <a href="#rooms">🏠 部屋割り</a>
   <a href="#drinks">🍽️ 飲み物</a>
+  <a href="#menu">🍳 メニュー</a>
   <a href="#day2">🌄 2日目</a>
-  <a href="#members">👥 名簿</a>
   <a href="#villa">🏡 施設</a>
   <a href="#guide">🗺 ガイド</a>
+  <a href="#members">👥 名簿</a>
 </nav>
 
 <!-- ===== 名前クリックで自分のルート ===== -->
@@ -227,8 +232,8 @@ tr:last-child td{border-bottom:none;}
     <thead>
       <tr>
         <th class="th-t">時間</th>
-        <th class="th-h">🌳 ハルニレテラス組<br><span style="font-weight:400;font-size:.8em;">リエ・イワトモ・わか・NAMIちゃん・さっきー<br>まめちゃん・ちえっぴ・さーや・ゆうちゃん・あやや</span></th>
-        <th class="th-k">🛒 買い出し組<br><span style="font-weight:400;font-size:.8em;">なか・Tomoki・ロールパンナ・nozomi・おまめさん</span></th>
+        <th class="th-h">🌳 ハルニレテラス組<br><span style="font-weight:400;font-size:.8em;">リエ・イワトモ・わか・NAMIちゃん・さっきー<br>まめちゃん・ゆうちゃん・あやや（・ちえっぴ）</span></th>
+        <th class="th-k">🛒 買い出し組<br><span style="font-weight:400;font-size:.8em;">なか・Tomoki・ロールパンナ・nozomi・おまめさん・ちえっぴ</span></th>
         <th class="th-l">🍝 3期ランチ会組<br><span style="font-weight:400;font-size:.8em;">Erika・しほママ・mayumi・みかん・くるみん<br>しお・いく・tan・なるみん・みづき・Mika</span></th>
         <th class="th-c">🚃 チェックイン前到着組<br><span style="font-weight:400;font-size:.8em;">たか・わだちゃん・みなこちゃん</span></th>
         <th class="th-x">🚕 チェックイン後到着組<br><span style="font-weight:400;font-size:.8em;">よっしー・おつね・Minami</span></th>
@@ -239,7 +244,7 @@ tr:last-child td{border-bottom:none;}
         <td class="td-t">〜10:30</td>
         <td class="td-h">
           <div class="pe">🚃 新幹線・車で軽井沢へ</div>
-          <div class="pn">はくたか557号 10:32着（リエ・さっきー・まめちゃん・ちえっぴ・さーや）<br>わか・NAMIちゃんは10:30 車でハルニレテラスへ直行</div>
+          <div class="pn">はくたか557号 10:32着（リエ・さっきー・まめちゃん・ちえっぴ）<br>わか・NAMIちゃんは10:30 車でハルニレテラスへ直行</div>
         </td>
         <td class="td-k">
           <div class="pe">🚗 出発・移動中</div>
@@ -262,15 +267,15 @@ tr:last-child td{border-bottom:none;}
         <td class="td-t">10:30<br>〜<br>12:50</td>
         <td class="td-h">
           <div class="pe">📍 ハルニレテラス 到着・散策・📷撮影</div>
-          <div class="pn">わか・NAMIちゃん先行。10:32組が合流後、順番に撮影（詳細は撮影スケジュール参照）<br>待ち時間はハルニレテラスでショッピング・カフェ自由</div>
+          <div class="pn">わか・NAMIちゃん先行。10:32組が合流後、順番に撮影（詳細は撮影スケジュール参照）<br>待ち時間はハルニレテラスでショッピング・カフェ自由<br><span class="pno">📍 ちえっぴの撮影終了後、TomokiとちえっぴはTomoki carで買い出し組に合流</span></div>
         </td>
         <td class="td-k">
           <div class="pe">🛒 ツルヤ御代田 12:00集合 → 買い出し</div>
-          <div class="pn">なか・Tomoki・ロールパンナ・nozomi・おまめさん 集合<br>夕食・飲み物など買い出し<br><span class="pno">Tomokiはハルニレ経由でちえっぴ・ゆうちゃん・あやや をピックアップ</span></div>
+          <div class="pn">なか・Tomoki・ちえっぴ・ロールパンナ・nozomi・おまめさん 集合<br>夕食・飲み物など買い出し<br><span class="pno">Tomokiはハルニレであやや・ゆうちゃんを降ろし、ちえっぴをピックアップしてツルヤへ</span><br><span class="pno">ロールパンナ・おまめは買い出し後 3期生ランチ組に合流</span></div>
         </td>
         <td class="td-l">
           <div class="pe">🍝 旧軽井沢エリアでランチ</div>
-          <div class="pn">Erika・しほママ・mayumi・みかん・くるみん・しお・いく・tan・なるみん・みづき・Mika<br>ピエトリーノ等 旧軽井沢でランチ＆散策</div>
+          <div class="pn">Erika・しほママ・mayumi・みかん・くるみん・しお・いく・tan・なるみん・みづき・Mika<br>ピエトリーノ等 旧軽井沢でランチ＆散策<br><span class="pno">※みづきは12:36軽井沢駅着・会場まで徒歩8分。時間タイトのためドリンクのみ or ランチ組のピックアップ時間に合わせて合流</span></div>
         </td>
         <td class="td-c">
           <div class="pe">🚃 移動中</div>
@@ -285,11 +290,11 @@ tr:last-child td{border-bottom:none;}
         <td class="td-t">13:00<br>〜<br>13:50</td>
         <td class="td-h">
           <div class="pe">🍽️ ランチ → ヴィラへ出発</div>
-          <div class="pn">ハルニレテラスでランチ後、わかなcar・NAMIcar・イワトモcarに分乗してヴィラへ</div>
+          <div class="pn">ハルニレテラスでランチ後、NAMI car・イワトモcarでヴィラへ。わかなcarは軽井沢駅へチェックイン前チームをお迎えに</div>
         </td>
         <td class="td-k">
           <div class="pe">🚗 買い出し完了 → ヴィラへ</div>
-          <div class="pn">なかcar・Tomokicarで荷物を積んでヴィラへ<br>ロールパンナは3期ランチ組と合流してから出発</div>
+          <div class="pn">なかcar・Tomokicarで荷物を積んでヴィラへ<br>ロールパンナ・おまめは3期ランチ組と合流してから出発</div>
         </td>
         <td class="td-l">
           <div class="pe">🚗 ランチ終了 → ヴィラへ</div>
@@ -342,30 +347,39 @@ tr:last-child td{border-bottom:none;}
 
 <!-- ===== 配車 ===== -->
 <div class="section" id="car">
-  <div class="section-title" style="color:var(--peach-dark)"><span>🚙</span>到着ルート・配車（暫定）</div>
-  <div class="note"><strong>⚠️ 暫定情報です。</strong>配車の詳細は今後変更になる場合があります。</div>
+  <div class="section-title" style="color:var(--peach-dark)"><span>🚙</span>到着ルート・配車</div>
 
   <div class="car-h">🌳 ハルニレテラス組 → ヴィラ</div>
-  <div class="car-c"><div class="car-label">🚙 わかなcar（6人）<br><span style="font-size:.76em;color:var(--text-light)">軽井沢駅から出発</span></div><div class="cp"><span class="td">わか（ドライバー）</span><span class="tp">たか</span><span class="tp">まめちゃん</span><span class="tp">わだちゃん</span><span class="tp">みなこちゃん</span></div></div>
-  <div class="car-c"><div class="car-label">🚙 NAMI car（5人）<br><span style="font-size:.76em;color:var(--text-light)">ハルニレテラスから出発</span></div><div class="cp"><span class="td">NAMIちゃん（ドライバー）</span><span class="tp">さっきー</span><span class="tp">ゆうちゃん</span><span class="tp">さーや</span></div></div>
-  <div class="car-c"><div class="car-label">🚙 イワトモcar（5人）<br><span style="font-size:.76em;color:var(--text-light)">ハルニレテラスから出発</span></div><div class="cp"><span class="td">イワトモ（ドライバー）</span><span class="tp">リエ</span><span class="tp">あやや</span></div></div>
+  <div class="note" style="margin-bottom:12px;font-size:.83em;background:var(--sage-bg);border-left-color:var(--sage);">
+    🚕 リエ・さっきー・まめちゃん・ちえっぴは軽井沢駅からハルニレテラスまでタクシーで移動
+  </div>
 
-  <div class="car-h">🛒 買い出し組 → ヴィラ（ツルヤ御代田から出発）</div>
-  <div class="car-c"><div class="car-label">🚙 なかcar（5人）<br><span style="font-size:.76em;color:var(--text-light)">ツルヤ御代田から出発</span></div><div class="cp"><span class="td">なか（ドライバー）</span><span class="tp">nozomi</span></div></div>
-  <div class="car-c"><div class="car-label">🚙 Tomoki car（4人）<br><span style="font-size:.76em;color:var(--text-light)">ハルニレ経由 → ツルヤ → ヴィラ</span></div><div class="cp"><span class="td">Tomoki（ドライバー）</span><span class="tp">ちえっぴ（ハルニレでピックアップ）</span><span class="tp">ゆうちゃん（ハルニレでピックアップ）</span><span class="tp">あやや（ハルニレでピックアップ）</span></div></div>
+  <div class="car-c"><div class="car-label">🚙 NAMI car（5人）<br><span style="font-size:.76em;color:var(--text-light);">ハルニレテラスから出発</span></div><div class="cp"><span class="td">NAMIちゃん（ドライバー）</span><span class="tp">さっきー</span><span class="tp">まめちゃん</span><span class="tp">ゆうちゃん</span></div></div>
+  <div class="car-c"><div class="car-label">🚙 イワトモcar（5人）<br><span style="font-size:.76em;color:var(--text-light);">ハルニレテラスから出発</span></div><div class="cp"><span class="td">イワトモ（ドライバー）</span><span class="tp">リエ</span><span class="tp">あやや</span></div></div>
+  <div class="note" style="margin-bottom:14px;font-size:.83em;background:var(--sage-bg);border-left-color:var(--sage);">
+    ※ <strong>あやや・ゆうちゃん</strong>はTomoki carで軽井沢へ → ハルニレテラスで降車・撮影 → それぞれ イワトモcar・NAMI car でヴィラへ
+  </div>
 
-  <div class="car-h">🍝 3期ランチ会組 → ヴィラ（ピエトリーノ方面から出発）</div>
-  <div class="car-c"><div class="car-label">🚙 ロールパンナcar（5人）<br><span style="font-size:.76em;color:var(--text-light)">ツルヤ→ピエトリーノ→ヴィラ</span></div><div class="cp"><span class="td">ロールパンナ（ドライバー）</span><span class="tp">しお</span><span class="tp">mayumi</span><span class="tp">いく</span><span class="tp">みづき</span></div></div>
-  <div class="car-c"><div class="car-label">🚙 おまめcar（5人）<br><span style="font-size:.76em;color:var(--text-light)">ピエトリーノ→ヴィラ</span></div><div class="cp"><span class="td">おまめさん（ドライバー）</span><span class="tp">なるみん</span><span class="tp">みかん</span><span class="tp">みづき</span><span class="tp">くるみん</span></div></div>
-  <div class="car-c"><div class="car-label">🚙 Erika car（4〜8人）<br><span style="font-size:.76em;color:var(--text-light)">ピエトリーノ→ヴィラ</span></div><div class="cp"><span class="td">Erika（ドライバー）</span><span class="tp">しほママ</span><span class="tp">Mika</span><span class="tp">tan</span></div></div>
-  <div class="note" style="margin-top:14px;"><strong>TAXI組：</strong>よっしー・おつね・Minamiは軽井沢駅からタクシーでヴィラへ向かう予定です。</div>
+  <div class="car-h">🛒 買い出し組 → ヴィラ（ツルヤ御代田12時集合）</div>
+  <div class="car-c"><div class="car-label">🚙 なかcar（5人）<br><span style="font-size:.76em;color:var(--text-light);">ツルヤ御代田から出発</span></div><div class="cp"><span class="td">なか（ドライバー）</span><span class="tp">nozomi</span></div></div>
+  <div class="car-c"><div class="car-label">🚙 Tomoki car（4人）<br><span style="font-size:.76em;color:var(--text-light);">地元でゆうちゃん・あやや をP/U → ハルニレで降ろす → ちえっぴP/U → ツルヤ御代田</span></div><div class="cp"><span class="td">Tomoki（ドライバー）</span><span class="tp">ちえっぴ（ハルニレでP/U）</span></div></div>
+  <div class="car-h">🚃 チェックイン前到着組（13:20 軽井沢駅着）→ わかなcarでP/U</div>
+  <div class="car-c"><div class="car-label">🚙 わかなcar<br><span style="font-size:.76em;color:var(--text-light);">わかがハルニレから軽井沢駅へ向かいピックアップ → ヴィラ</span></div><div class="cp"><span class="td">わか（ドライバー）</span><span class="tp">わだちゃん</span><span class="tp">たか</span><span class="tp">みなこちゃん</span></div></div>
+
+  <div class="car-h">🍝 3期生ランチ組 → ヴィラ（ランチ後出発）</div>
+  <div class="car-c"><div class="car-label">🚙 ロールパンナcar（5人）<br><span style="font-size:.76em;color:var(--text-light);">ツルヤにて買い出し後、3期生ランチ組と合流 → ヴィラへ</span></div><div class="cp"><span class="td">ロールパンナ（ドライバー）</span><span class="tp">しお</span><span class="tp">いく</span><span class="tp">mayumi</span><span class="tp">くるみん</span></div></div>
+  <div class="car-c"><div class="car-label">🚙 おまめcar（5人）<br><span style="font-size:.76em;color:var(--text-light);">ツルヤにて買い出し後、3期生ランチ組と合流 → ヴィラへ</span></div><div class="cp"><span class="td">おまめさん（ドライバー）</span><span class="tp">みかん</span><span class="tp">みづき</span><span class="tp">なるみん</span></div></div>
+  <div class="car-c"><div class="car-label">🚙 Erika car（〜8人）<br><span style="font-size:.76em;color:var(--text-light);">ピエトリーノ方面からヴィラへ</span></div><div class="cp"><span class="td">Erika（ドライバー）</span><span class="tp">しほママ</span><span class="tp">Mika</span><span class="tp">tan</span></div></div>
+
+  <div class="car-h">🚕 チェックイン後到着組（夕方）→ TAXI</div>
+  <div class="car-c"><div class="car-label">🚕 軽井沢駅からTAXIでヴィラへ</div><div class="cp"><span class="tp">よっしー</span><span class="tp">おつね</span><span class="tp">Minami</span></div></div>
 
   <div class="note note-r" style="margin-top:14px;">
     <strong>🅿️ 駐車スペースについて</strong><br>
-    駐車スペースには限りがあります。<strong>ドライバーさんは自分の宿泊棟の駐車スペースに停めてください。</strong><br>
+    ドライバーさんは自分の宿泊棟の駐車スペースへ。<br>
     <div style="margin-top:8px;display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;font-size:.85em;">
-      <div style="background:white;border-radius:8px;padding:8px 12px;"><strong style="color:var(--sage-dark);">🌲 平谷棟</strong>：イワトモcar・ロールパンナcar</div>
-      <div style="background:white;border-radius:8px;padding:8px 12px;"><strong style="color:var(--teal-dark);">♨️ サウナ</strong>：なかcar</div>
+      <div style="background:white;border-radius:8px;padding:8px 12px;"><strong style="color:var(--sage-dark);">🌲 平屋棟</strong>：イワトモcar・ロールパンナcar</div>
+      <div style="background:white;border-radius:8px;padding:8px 12px;"><strong style="color:var(--teal-dark);">♨️ サウナ棟</strong>：なかcar</div>
       <div style="background:white;border-radius:8px;padding:8px 12px;"><strong style="color:var(--rose-dark);">🦶 足湯棟</strong>：NAMIcar・おまめcar・うりさん（カメラマン）</div>
       <div style="background:white;border-radius:8px;padding:8px 12px;"><strong style="color:var(--lav-dark);">🛁 檜風呂</strong>：わかなcar・Tomoki car・Erika car</div>
     </div>
@@ -375,6 +389,20 @@ tr:last-child td{border-bottom:none;}
 <!-- ===== 撮影 ===== -->
 <div class="section" id="photo">
   <div class="section-title" style="color:var(--rose-dark)"><span>📷</span>撮影スケジュール</div>
+
+  <div style="background:var(--rose-bg);border-radius:13px;padding:18px 20px;margin-bottom:18px;border-left:4px solid var(--rose);">
+    <div style="font-weight:800;color:var(--rose-dark);margin-bottom:8px;font-size:.95em;">📸 撮影時間について</div>
+    <div style="font-size:.87em;line-height:1.9;color:var(--text);">
+      撮影時間はタイトになっています。フォトグラファー うりさんのお時間にも限りがあるため、<strong>時間厳守にご協力ください🙏</strong><br>
+      慣れていない方は恥ずかしがっているうちに時間が終わってしまうかも…！<br>
+      事前にメンバー同士で表情をほぐしあって、撮影時間も一緒に盛り上げていきましょう🌿✨
+    </div>
+    <div style="margin-top:12px;font-size:.85em;">
+      📷 <strong>フォトグラファー：うりさん</strong>　
+      <a href="https://www.instagram.com/uriphoto/" target="_blank" style="color:var(--rose-dark);font-weight:700;">@uriphoto</a>
+    </div>
+  </div>
+
   <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:16px;">
     <div style="background:#d4e8d4;border-radius:9px;padding:7px 14px;font-size:.84em;"><strong style="color:#3d6b3d;">5-6カット</strong>　所要時間 10分</div>
     <div style="background:#d4e0f0;border-radius:9px;padding:7px 14px;font-size:.84em;"><strong style="color:#3d4b7a;">1-2カット</strong>　所要時間 4分</div>
@@ -385,12 +413,12 @@ tr:last-child td{border-bottom:none;}
     <thead><tr><th style="background:var(--sage);color:white;">時間</th><th style="background:var(--sage);color:white;">名前</th><th style="background:var(--sage);color:white;">カット数</th></tr></thead>
     <tbody>
       <tr><td class="ph-t">11:30</td><td class="ph-n">リエ</td><td><span class="c56">5-6カット</span></td></tr>
-      <tr><td class="ph-t">11:40</td><td class="ph-n">イワトモ</td><td><span class="c56">5-6カット</span></td></tr>
-      <tr><td class="ph-t">11:50</td><td class="ph-n">わか</td><td><span class="c56">5-6カット</span></td></tr>
-      <tr><td class="ph-t">12:00</td><td class="ph-n">ゆうちゃん</td><td><span class="c56">5-6カット</span></td></tr>
+      <tr><td class="ph-t">11:40</td><td class="ph-n">ちえっぴ</td><td><span class="c56">5-6カット</span></td></tr>
+      <tr><td class="ph-t">11:50</td><td class="ph-n">イワトモ</td><td><span class="c56">5-6カット</span></td></tr>
+      <tr><td class="ph-t">12:00</td><td class="ph-n">わか</td><td><span class="c56">5-6カット</span></td></tr>
       <tr><td class="ph-t">12:10</td><td class="ph-n">さっきー</td><td><span class="c56">5-6カット</span></td></tr>
       <tr><td class="ph-t">12:20</td><td class="ph-n">あやや</td><td><span class="c56">5-6カット</span></td></tr>
-      <tr><td class="ph-t">12:30</td><td class="ph-n">ちえっぴ</td><td><span class="c56">5-6カット</span></td></tr>
+      <tr><td class="ph-t">12:30</td><td class="ph-n">ゆうちゃん</td><td><span class="c56">5-6カット</span></td></tr>
       <tr><td class="ph-t">12:40</td><td class="ph-n">まめちゃん</td><td><span class="c12">1-2カット</span></td></tr>
     </tbody>
   </table></div>
@@ -420,14 +448,14 @@ tr:last-child td{border-bottom:none;}
       <tr><td class="ph-t">16:44</td><td class="ph-n">よっしー</td><td><span class="c56">5-6カット</span></td></tr>
     </tbody>
   </table></div>
-  <div class="note note-r" style="margin-top:12px;"><strong>撮影なし：</strong>なか・NAMIちゃん・さーや・みづき・Erika</div>
+  <div class="note note-r" style="margin-top:12px;"><strong>撮影なし：</strong>なか・NAMIちゃん・みづき・Erika</div>
 </div>
 
 <!-- ===== 部屋割り ===== -->
 <div class="section" id="rooms">
   <div class="section-title" style="color:var(--lav-dark)"><span>🏠</span>部屋割り</div>
   <div class="rg">
-    <div class="rc r1"><h3>🌲 平谷棟（7名）</h3>
+    <div class="rc r1"><h3>🌲 平屋棟（7名）</h3>
       <div class="rm"><span class="rm-n">イワトモ</span><span class="rm-r">講師 🚙</span></div>
       <div class="rm"><span class="rm-n">さっきー</span><span class="rm-r">1期</span></div>
       <div class="rm"><span class="rm-n">ちえっぴ</span><span class="rm-r">2期 🍳</span></div>
@@ -436,36 +464,35 @@ tr:last-child td{border-bottom:none;}
       <div class="rm"><span class="rm-n">いく</span><span class="rm-r">3期</span></div>
       <div class="rm"><span class="rm-n">mayumi</span><span class="rm-r">3期</span></div>
     </div>
-    <div class="rc r2"><h3>♨️ サウナ（7名）</h3>
+    <div class="rc r2"><h3>♨️ サウナ棟（7名）</h3>
       <div class="rm"><span class="rm-n">なか</span><span class="rm-r">講師 🚙</span></div>
       <div class="rm"><span class="rm-n">まめちゃん</span><span class="rm-r">1期 ★</span></div>
-      <div class="rm"><span class="rm-n">さーや</span><span class="rm-r">2期</span></div>
+      <div class="rm"><span class="rm-n">みなこちゃん</span><span class="rm-r">2期</span></div>
       <div class="rm"><span class="rm-n">nozomi</span><span class="rm-r">3期 🍳</span></div>
       <div class="rm"><span class="rm-n">Mika</span><span class="rm-r">3期</span></div>
       <div class="rm"><span class="rm-n">くるみん</span><span class="rm-r">3期</span></div>
       <div class="rm"><span class="rm-n">みかん</span><span class="rm-r">3期</span></div>
     </div>
-    <div class="rc r3"><h3>🦶 足湯（8名）</h3>
+    <div class="rc r3"><h3>🦶 足湯棟（7名）</h3>
       <div class="rm"><span class="rm-n">リエ</span><span class="rm-r">講師</span></div>
       <div class="rm"><span class="rm-n">NAMIちゃん</span><span class="rm-r">1期 🚙</span></div>
       <div class="rm"><span class="rm-n">たか</span><span class="rm-r">1期</span></div>
       <div class="rm"><span class="rm-n">おつね</span><span class="rm-r">2期 ★</span></div>
       <div class="rm"><span class="rm-n">Minami</span><span class="rm-r">3期 ★</span></div>
       <div class="rm"><span class="rm-n">しほママ</span><span class="rm-r">3期</span></div>
-      <div class="rm"><span class="rm-n">しお</span><span class="rm-r">3期</span></div>
       <div class="rm"><span class="rm-n">tan</span><span class="rm-r">3期</span></div>
     </div>
     <div class="rc r4"><h3>🛁 檜風呂（7名）</h3>
       <div class="rm"><span class="rm-n">わか</span><span class="rm-r">0期 🚙★</span></div>
       <div class="rm"><span class="rm-n">わだちゃん</span><span class="rm-r">1期</span></div>
       <div class="rm"><span class="rm-n">Tomoki</span><span class="rm-r">2期 🚙🍳★</span></div>
-      <div class="rm"><span class="rm-n">みなこちゃん</span><span class="rm-r">2期</span></div>
       <div class="rm"><span class="rm-n">みづき</span><span class="rm-r">3期</span></div>
       <div class="rm"><span class="rm-n">なるみん</span><span class="rm-r">3期</span></div>
+      <div class="rm"><span class="rm-n">しお</span><span class="rm-r">3期</span></div>
       <div class="rm"><span class="rm-n">Erika</span><span class="rm-r">3期 🚙</span></div>
     </div>
   </div>
-  <div class="note" style="margin-top:12px;"><strong>凡例：</strong>★幹事　🍳料理担当　🚙自家用車あり<br>※ ゆうちゃん・あやや・おまめさんは日帰りのため部屋割なし</div>
+  <div class="note" style="margin-top:12px;"><strong>凡例：</strong>★幹事　🍳料理担当　🚙自家用車あり<br>※ ゆうちゃん・あやや は日帰りのため部屋割なし</div>
 </div>
 
 <!-- ===== 夕食飲み物 ===== -->
@@ -480,11 +507,11 @@ tr:last-child td{border-bottom:none;}
         <th>🍷<br>赤ワイン<br><strong>2</strong></th>
         <th>🥂<br>白ワイン<br><strong>2</strong></th>
         <th>✨<br>スパークリング<br><strong>5</strong></th>
-        <th>🍹<br>チューハイ<br><strong>8</strong></th>
+        <th>🍹<br>チューハイ<br><strong>7</strong></th>
         <th>🥃<br>ハイボール<br><strong>3</strong></th>
         <th>🧃<br>ノンアル<br><strong>8</strong></th>
-        <th>💧<br>水<br><strong>14</strong></th>
-        <th>🍵<br>お茶<br><strong>15</strong></th>
+        <th>💧<br>水<br><strong>13</strong></th>
+        <th>🍵<br>お茶<br><strong>14</strong></th>
       </tr>
     </thead>
     <tbody>
@@ -502,7 +529,7 @@ tr:last-child td{border-bottom:none;}
       <tr><td class="dn">みなこちゃん</td><td></td><td></td><td></td><td></td><td class="don">✓</td><td></td><td></td><td></td><td></td></tr>
       <tr><td class="dn">おつね</td><td></td><td></td><td></td><td></td><td></td><td class="don">✓</td><td></td><td></td><td></td></tr>
       <tr><td class="dn">ちえっぴ</td><td></td><td></td><td></td><td class="don">✓</td><td class="don">✓</td><td></td><td></td><td class="don">✓</td><td></td></tr>
-      <tr><td class="dn">さーや</td><td></td><td></td><td></td><td></td><td class="don">✓</td><td></td><td></td><td class="don">✓</td><td class="don">✓</td></tr>
+      
       <tr><td class="dn">Mika</td><td class="don">✓</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
       <tr><td class="dn">みかん</td><td class="don">✓</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="don">✓</td></tr>
       <tr><td class="dn">しほママ</td><td class="don">✓</td><td></td><td></td><td></td><td class="don">✓</td><td class="don">✓</td><td></td><td></td><td></td></tr>
@@ -521,6 +548,14 @@ tr:last-child td{border-bottom:none;}
   </table></div>
 </div>
 
+<!-- ===== 夕食・朝食メニュー ===== -->
+<div class="section" id="menu">
+  <div class="section-title" style="color:var(--rose-dark)"><span>🍽️</span>夕食・朝食メニュー</div>
+  <div style="background:white;border-radius:13px;overflow:hidden;box-shadow:var(--shadow);">
+    <img src="LINE_NOTE_260604_1.jpg" alt="軽井沢合宿ディナー" style="width:100%;height:auto;display:block;" loading="lazy">
+  </div>
+</div>
+
 <!-- ===== 2日目 ===== -->
 <div class="section" id="day2">
   <div class="section-title" style="color:var(--blue-dark)"><span>🌄</span>2日目（6月7日・日）</div>
@@ -528,16 +563,19 @@ tr:last-child td{border-bottom:none;}
   <div style="background:var(--blue-bg);border-radius:13px;padding:16px 18px;margin-bottom:18px;border:1px solid #c0d4e8;">
     <div style="font-weight:700;color:var(--blue-dark);margin-bottom:6px;">🍽️ 13:30〜　LONGING HOUSE 軽井沢 でランチ（全体）</div>
     <div style="font-size:.84em;color:var(--text-mid);">旧軽井沢エリアの人気レストラン。旧軽井沢から車で約3分、千住博美術館から約12分。</div>
+    <div style="margin-top:10px;background:var(--rose-bg);border-radius:9px;padding:10px 14px;font-size:.85em;">
+      <strong style="color:var(--rose-dark);">⏰ 13:30 時間厳守！</strong>　遅れる場合は必ず幹事に連絡を入れてください🙏
+    </div>
   </div>
 
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px;">
     <div style="background:white;border-radius:11px;padding:14px;box-shadow:var(--shadow);border-left:4px solid var(--sage);">
       <div style="font-weight:700;color:var(--sage-dark);margin-bottom:7px;font-size:.9em;">✅ ランチ参加予定（22名）</div>
-      <div style="font-size:.82em;color:var(--text-mid);line-height:2.1;">リエ・なか・わか・さっきー・まめちゃん・ゆうちゃん・よっしー・Tomoki・おつね・ちえっぴ・さーや・Mika・しほママ・mayumi・みづき・ロールパンナ・しお・tan・なるみん・Minami・nozomi・Erika</div>
+      <div style="font-size:.82em;color:var(--text-mid);line-height:2.1;">リエ・イワトモ・なか・わか・さっきー・まめちゃん・ゆうちゃん・よっしー・Tomoki・おつね・ちえっぴ・Mika・しほママ・mayumi・みづき・ロールパンナ・しお・tan・なるみん・Minami・nozomi・Erika</div>
     </div>
     <div style="background:white;border-radius:11px;padding:14px;box-shadow:var(--shadow);border-left:4px solid var(--rose);">
       <div style="font-weight:700;color:var(--rose-dark);margin-bottom:7px;font-size:.9em;">❌ 不参加・帰宅</div>
-      <div style="font-size:.82em;color:var(--text-mid);line-height:2.1;"><strong>不参加：</strong>わだちゃん・たか・みなこちゃん・みかん・くるみん・いく（ランチ前に帰宅）<br><strong>日帰りのため：</strong>おまめさん・あやや<br><strong>未定：</strong>イワトモ・NAMIちゃん</div>
+      <div style="font-size:.82em;color:var(--text-mid);line-height:2.1;"><strong>不参加：</strong>わだちゃん・たか・みなこちゃん・みかん・くるみん・いく・NAMIちゃん（ランチ前に帰宅 / 駅送迎のため）<br><strong>日帰りのため：</strong>おまめさん・あやや</div>
     </div>
   </div>
 
@@ -545,49 +583,140 @@ tr:last-child td{border-bottom:none;}
     <div style="font-weight:700;color:var(--blue-dark);margin-bottom:10px;font-size:.9em;">🍱 ランチメニュー集計</div>
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;font-size:.84em;">
       <div style="background:var(--sage-bg);border-radius:9px;padding:10px 14px;">
-        <div style="font-weight:700;color:var(--sage-dark);margin-bottom:5px;">🐟 信州サーモン（13名）</div>
-        <div style="color:var(--text-mid);line-height:1.9;">リエ・わか・よっしー・おつね・ちえっぴ・しほママ・みづき・tan・なるみん・Minami・Erika・ゆうちゃん・イワトモ</div>
+        <div style="font-weight:700;color:var(--sage-dark);margin-bottom:5px;">🐟 信州サーモン（18名）</div>
+        <div style="color:var(--text-mid);line-height:1.9;">リエ・イワトモ・なか・わか・さっきー・よっしー・Tomoki・おつね・ちえっぴ・Mika・しほママ・みづき・ロールパンナ・tan・なるみん・Minami・Erika・ゆうちゃん</div>
       </div>
       <div style="background:var(--peach-bg);border-radius:9px;padding:10px 14px;">
-        <div style="font-weight:700;color:var(--peach-dark);margin-bottom:5px;">🥩 蓼科高原ポーク（3名）</div>
-        <div style="color:var(--text-mid);line-height:1.9;">まめちゃん・Tomoki・しお</div>
+        <div style="font-weight:700;color:var(--peach-dark);margin-bottom:5px;">🥩 蓼科高原ポーク（4名）</div>
+        <div style="color:var(--text-mid);line-height:1.9;">まめちゃん・mayumi・しお・nozomi</div>
       </div>
-      <div style="background:#f8f5f0;border-radius:9px;padding:10px 14px;">
-        <div style="font-weight:700;color:var(--text-mid);margin-bottom:5px;">❓ 未回答（6名）</div>
-        <div style="color:var(--text-mid);line-height:1.9;">なか・さっきー・NAMIちゃん・さーや・Mika・mayumi・ロールパンナ・nozomi</div>
+
+    </div>
+  </div>
+
+  <h3 style="color:var(--blue-dark);margin-bottom:10px;font-size:.95em;">🗺 コース別グループ・配車</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;">
+    <!-- 美術館コース -->
+    <div style="background:white;border-radius:13px;padding:16px;box-shadow:var(--shadow);border-top:4px solid var(--blue);">
+      <div style="font-weight:800;color:var(--blue-dark);margin-bottom:12px;font-size:.95em;">🖼 美術館コース</div>
+      <div style="font-size:.84em;">
+        <div style="background:var(--blue-bg);border-radius:8px;padding:9px 12px;margin-bottom:8px;">
+          <div style="font-weight:700;color:var(--blue-dark);margin-bottom:4px;">🚙 イワトモcar（5人）</div>
+          <div style="color:var(--text-mid);line-height:1.9;">イワトモ・よっしー・ゆうちゃん・まめちゃん・なるみん</div>
+          <div style="font-size:.8em;color:var(--text-light);margin-top:3px;">※ よっしー・ゆうちゃん・まめちゃんはランチ会場でTomoki carに荷物移動</div>
+        </div>
+        <div style="background:var(--blue-bg);border-radius:8px;padding:9px 12px;">
+          <div style="font-weight:700;color:var(--blue-dark);margin-bottom:4px;">🚙 Tomoki car（4人）</div>
+          <div style="color:var(--text-mid);line-height:1.9;">Tomoki・たか・いく</div>
+          <div style="font-size:.8em;color:var(--rose-dark);margin-top:3px;">⚡ たか・いくを13時台新幹線に合わせて軽井沢駅へ送迎後ランチ合流</div>
+        </div>
+      </div>
+    </div>
+    <!-- 旧軽井沢コース -->
+    <div style="background:white;border-radius:13px;padding:16px;box-shadow:var(--shadow);border-top:4px solid var(--rose);">
+      <div style="font-weight:800;color:var(--rose-dark);margin-bottom:12px;font-size:.95em;">🏘 旧軽井沢コース</div>
+      <div style="font-size:.84em;display:grid;gap:7px;">
+        <div style="background:var(--rose-bg);border-radius:8px;padding:8px 12px;">
+          <div style="font-weight:700;color:var(--rose-dark);margin-bottom:3px;">🚙 NAMIcar（5人）</div>
+          <div style="color:var(--text-mid);">NAMIちゃん・みなこちゃん・くるみん・みかん・わだちゃん</div>
+          <div style="font-size:.8em;color:var(--rose-dark);margin-top:3px;">⚡ みなこ・くるみん・みかん・わだちゃんを13時台新幹線に合わせて駅送迎後ランチ合流</div>
+        </div>
+        <div style="background:var(--rose-bg);border-radius:8px;padding:8px 12px;">
+          <div style="font-weight:700;color:var(--rose-dark);margin-bottom:3px;">🚙 なかcar（5人）</div>
+          <div style="color:var(--text-mid);">なか・さっきー・おつね・みづき・nozomi</div>
+        </div>
+        <div style="background:var(--rose-bg);border-radius:8px;padding:8px 12px;">
+          <div style="font-weight:700;color:var(--rose-dark);margin-bottom:3px;">🚙 わかなcar（6人）</div>
+          <div style="color:var(--text-mid);">わか・リエ・Minami・mayumi・Mika</div>
+        </div>
+        <div style="background:var(--rose-bg);border-radius:8px;padding:8px 12px;">
+          <div style="font-weight:700;color:var(--rose-dark);margin-bottom:3px;">🚙 ロールパンナcar（5人）</div>
+          <div style="color:var(--text-mid);">ロールパンナ・ちえっぴ・しほママ・tan・しお</div>
+          <div style="font-size:.8em;color:var(--text-light);margin-top:3px;">※ なるみんはランチ会場でロールパンナcarへ荷物移動</div>
+        </div>
+        <div style="background:var(--rose-bg);border-radius:8px;padding:8px 12px;">
+          <div style="font-weight:700;color:var(--rose-dark);margin-bottom:3px;">🚙 Erika car（1人〜）</div>
+          <div style="color:var(--text-mid);">Erika</div>
+          <div style="font-size:.8em;color:var(--text-light);margin-top:3px;">※ 16時頃出発希望</div>
+        </div>
       </div>
     </div>
   </div>
 
-  <h3 style="color:var(--blue-dark);margin-bottom:10px;font-size:.95em;">🗺 コース別グループ（暫定）</h3>
-  <div class="d2g">
-    <div class="d2c da">
-      <h3>🖼 美術館コース</h3>
-      <div class="mb dr">🚙 イワトモ（ドライバー）</div>
-      <div class="mb">まめちゃん</div><div class="mb">よっしー</div>
-      <div class="mb">ゆうちゃん</div><div class="mb">なるみん</div>
-      <div class="mb">いく</div><div class="mb">Tomoki</div>
-    </div>
-    <div class="d2c db">
-      <h3>🏘 旧軽井沢コース</h3>
-      <div class="mb dr">🚙 ロールパンナ（ドライバー）</div>
-      <div class="mb">さっきー</div><div class="mb">tan</div>
-      <div class="mb">おつね</div><div class="mb">ちえっぴ</div>
-      <div class="mb">わだちゃん</div><div class="mb">しほママ</div>
-      <div class="mb">mayumi</div><div class="mb">みづき</div>
-      <div class="mb">nozomi</div><div class="mb">くるみん</div><div class="mb">みかん</div>
-    </div>
-    <div class="d2c dc">
-      <h3>🌿 どれでも（フレキシブル）</h3>
-      <div class="mb dr">🚙 わか（ドライバー）</div>
-      <div class="mb dr">🚙 NAMIちゃん（ドライバー）</div>
-      <div class="mb dr">🚙 Erika（ドライバー）</div>
-      <div class="mb">リエ</div><div class="mb">たか</div>
-      <div class="mb">Mika</div><div class="mb">しお</div>
-      <div class="mb">なか</div><div class="mb">Minami</div><div class="mb">さーや</div>
+  <div style="background:white;border-radius:13px;padding:16px;box-shadow:var(--shadow);margin-top:14px;border-left:4px solid var(--peach);">
+    <div style="font-weight:800;color:var(--peach-dark);margin-bottom:10px;font-size:.95em;">🚃 観光コース途中 → 軽井沢駅へ直行（13時台の新幹線）</div>
+    <div style="font-size:.84em;color:var(--text-mid);margin-bottom:10px;">ランチ前に帰宅する方は、観光中に各ドライバーが軽井沢駅まで送迎します。</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;font-size:.84em;">
+      <div style="background:var(--blue-bg);border-radius:8px;padding:10px 14px;">
+        <div style="font-weight:700;color:var(--blue-dark);margin-bottom:5px;">🚙 Tomoki car → 軽井沢駅</div>
+        <div style="color:var(--text-mid);">たか・いく</div>
+        <div style="font-size:.8em;color:var(--text-light);margin-top:4px;">美術館コース途中で離脱 → 駅へ送迎後、Tomokiはランチに合流</div>
+      </div>
+      <div style="background:var(--rose-bg);border-radius:8px;padding:10px 14px;">
+        <div style="font-weight:700;color:var(--rose-dark);margin-bottom:5px;">🚙 NAMI car → 軽井沢駅</div>
+        <div style="color:var(--text-mid);">みなこちゃん・くるみん・みかん・わだちゃん</div>
+        <div style="font-size:.8em;color:var(--text-light);margin-top:4px;">旧軽井沢コース途中で離脱 → 駅へ送迎（NAMIちゃんはランチ不参加）</div>
+      </div>
     </div>
   </div>
-  <div class="note" style="margin-top:12px;"><strong>⚠️ 2日目は調整中です。</strong>コース・配車は変更になる場合があります。</div>
+</div>
+
+<!-- ===== 宿泊施設 ===== -->
+<div class="section" id="villa">
+  <div class="section-title" style="color:var(--teal-dark)"><span>🏡</span>宿泊施設</div>
+  <div style="background:white;border-radius:14px;padding:22px 24px;box-shadow:var(--shadow);max-width:700px;">
+    <div style="font-size:1.1em;font-weight:800;color:var(--teal-dark);margin-bottom:4px;">軽井沢ハウスヴィラ</div>
+    <div style="font-size:.85em;color:var(--text-mid);margin-bottom:16px;">一棟貸しの高級貸別荘 ｜ 大人のおこもり宿をコンセプトに、家のように寛ぎながらもヴィラのように贅沢な空間</div>
+    <div style="display:grid;gap:10px;font-size:.9em;margin-bottom:18px;">
+      <div style="display:flex;gap:12px;align-items:flex-start;">
+        <span style="font-size:1.2em;flex-shrink:0;">📍</span>
+        <div><div style="font-weight:700;color:var(--text-mid);font-size:.8em;margin-bottom:2px;">住所</div>長野県北佐久郡軽井沢町長倉4588-38</div>
+      </div>
+      <div style="display:flex;gap:12px;align-items:flex-start;">
+        <span style="font-size:1.2em;flex-shrink:0;">🌐</span>
+        <div><div style="font-weight:700;color:var(--text-mid);font-size:.8em;margin-bottom:2px;">公式HP</div><a href="https://karuizawa-house-villa.com/" target="_blank" style="color:var(--teal-dark);word-break:break-all;">https://karuizawa-house-villa.com/</a></div>
+      </div>
+      <div style="display:flex;gap:12px;align-items:flex-start;">
+        <span style="font-size:1.2em;flex-shrink:0;">📸</span>
+        <div><div style="font-weight:700;color:var(--text-mid);font-size:.8em;margin-bottom:2px;">Instagram</div><a href="https://www.instagram.com/housevilla.karuizawa/" target="_blank" style="color:var(--teal-dark);">@housevilla.karuizawa</a></div>
+      </div>
+    </div>
+    <div style="font-weight:700;color:var(--text-mid);font-size:.85em;margin-bottom:10px;">今回使用する棟</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;font-size:.84em;">
+      <div style="background:var(--sage-bg);border-radius:10px;padding:11px 14px;text-align:center;">
+        <div style="font-size:1.3em;margin-bottom:4px;">🌲</div>
+        <div style="font-weight:700;color:var(--sage-dark);">平屋棟</div>
+        <div style="color:var(--text-light);font-size:.8em;margin-top:2px;">〜11名 ／ 3LDK</div>
+      </div>
+      <div style="background:var(--teal-bg);border-radius:10px;padding:11px 14px;text-align:center;">
+        <div style="font-size:1.3em;margin-bottom:4px;">♨️</div>
+        <div style="font-weight:700;color:var(--teal-dark);">サウナ棟</div>
+        <div style="color:var(--text-light);font-size:.8em;margin-top:2px;">〜13名 ／ 4LDK</div>
+      </div>
+      <div style="background:var(--rose-bg);border-radius:10px;padding:11px 14px;text-align:center;">
+        <div style="font-size:1.3em;margin-bottom:4px;">🦶</div>
+        <div style="font-weight:700;color:var(--rose-dark);">足湯棟</div>
+        <div style="color:var(--text-light);font-size:.8em;margin-top:2px;">〜13名 ／ 4LDK</div>
+      </div>
+      <div style="background:var(--lav-bg);border-radius:10px;padding:11px 14px;text-align:center;">
+        <div style="font-size:1.3em;margin-bottom:4px;">🛁</div>
+        <div style="font-weight:700;color:var(--lav-dark);">檜風呂</div>
+        <div style="color:var(--text-light);font-size:.8em;margin-top:2px;">〜13名 ／ 4LDK</div>
+      </div>
+    </div>
+    <div style="margin-top:12px;font-size:.8em;color:var(--text-light);">全棟に薪ストーブあり。非対面チェックイン。</div>
+  </div>
+</div>
+
+<!-- ===== ガイド ===== -->
+<div class="section" id="guide">
+  <div class="section-title" style="color:var(--peach-dark)"><span>🗺</span>軽井沢 エリアガイド</div>
+  <div class="gg">
+    <div class="gi"><img src="S__211435532_0.jpg" alt="ハルニレテラスガイド" loading="lazy"><div class="gc" style="color:var(--sage-dark);">🌳 ハルニレテラス 完全ガイド</div></div>
+    <div class="gi"><img src="S__211435531_0.jpg" alt="旧軽井沢ガイド" loading="lazy"><div class="gc" style="color:var(--rose-dark);">🏘 旧軽井沢 おすすめスポット</div></div>
+    <div class="gi"><img src="S__211435533_0.jpg" alt="T-SITEガイド" loading="lazy"><div class="gc" style="color:var(--blue-dark);">📚 軽井沢 T-SITE 完全ガイド</div></div>
+    <div class="gi"><img src="S__211435530_0.jpg" alt="ドライブ所要時間" loading="lazy"><div class="gc" style="color:var(--teal-dark);">🚗 ドライブ所要時間ガイド</div></div>
+  </div>
 </div>
 
 <!-- ===== 名簿 ===== -->
@@ -612,36 +741,35 @@ tr:last-child td{border-bottom:none;}
       <th style="background:var(--rose-dark);white-space:nowrap;">ランチメニュー</th>
     </tr></thead>
     <tbody>
-      <tr><td class="mn">リエ</td><td>講師</td><td></td><td><span class="badge bg">両日宿泊</span></td><td>—</td><td>10:32</td><td>ハルニレ組</td><td>イワトモcar</td><td>5-6カット</td><td>11:30</td><td>足湯</td><td>どれでも</td><td>調整中</td><td>✅参加</td><td>信州サーモン</td></tr>
-      <tr><td class="mn">イワトモ</td><td>講師</td><td>🚙</td><td><span class="badge bg">両日宿泊</span></td><td style="color:var(--rose-dark);font-weight:700;">桃・さくらんぼ</td><td>—</td><td>ハルニレ組</td><td>イワトモcar</td><td>5-6カット</td><td>11:40</td><td>平谷棟</td><td>美術館</td><td>調整中</td><td>❓未定</td><td>信州サーモン</td></tr>
-      <tr><td class="mn">なか</td><td>講師</td><td>🚙</td><td><span class="badge bg">両日宿泊</span></td><td>—</td><td>12:00</td><td>買い出し組</td><td>なかcar</td><td>なし</td><td>—</td><td>サウナ</td><td>どれでも</td><td>調整中</td><td>✅参加</td><td>未回答</td></tr>
-      <tr><td class="mn">わか</td><td>0期</td><td>🚙★</td><td><span class="badge bg">両日宿泊</span></td><td style="color:var(--rose-dark);font-weight:700;">そば・長芋</td><td>10:30</td><td>ハルニレ組</td><td>わかなcar</td><td>5-6カット</td><td>11:50</td><td>檜風呂</td><td>どれでも</td><td>調整中</td><td>✅参加</td><td>信州サーモン</td></tr>
-      <tr><td class="mn">さっきー</td><td>1期</td><td></td><td><span class="badge bg">両日宿泊</span></td><td>—</td><td>10:32</td><td>ハルニレ組</td><td>NAMI car</td><td>5-6カット</td><td>12:10</td><td>平谷棟</td><td>旧軽井沢</td><td>調整中</td><td>✅参加</td><td>未回答</td></tr>
-      <tr><td class="mn">わだちゃん</td><td>1期</td><td></td><td><span class="badge bg">両日宿泊</span></td><td>—</td><td>13:20</td><td>チェックイン前到着</td><td>わかなcar</td><td>1-2カット</td><td>14:18</td><td>檜風呂</td><td>旧軽井沢</td><td>調整中</td><td>❌不参加</td><td>—</td></tr>
-      <tr><td class="mn">まめちゃん</td><td>1期</td><td>★</td><td><span class="badge bg">両日宿泊</span></td><td>—</td><td>10:32</td><td>ハルニレ組</td><td>NAMI car</td><td>1-2カット</td><td>12:40</td><td>サウナ</td><td>美術館</td><td>調整中</td><td>✅参加</td><td>蓼科高原ポーク</td></tr>
-      <tr><td class="mn">NAMIちゃん</td><td>1期</td><td>🚙</td><td><span class="badge bg">両日宿泊</span></td><td>—</td><td>10:30</td><td>ハルニレ組</td><td>NAMI car</td><td>なし</td><td>—</td><td>足湯</td><td>—</td><td>調整中</td><td>❓未定</td><td>未回答</td></tr>
-      <tr><td class="mn">たか</td><td>1期</td><td></td><td><span class="badge bg">両日宿泊</span></td><td>—</td><td>13:20</td><td>チェックイン前到着</td><td>わかなcar</td><td>1-2カット</td><td>14:14</td><td>足湯</td><td>どれでも</td><td>調整中</td><td>❌不参加</td><td>—</td></tr>
-      <tr><td class="mn">よっしー</td><td>2期</td><td></td><td><span class="badge bg">両日宿泊</span></td><td>—</td><td>15:20〜</td><td>チェックイン後到着</td><td>TAXI</td><td>5-6カット</td><td>16:44</td><td>平谷棟</td><td>美術館</td><td>調整中</td><td>✅参加</td><td>信州サーモン</td></tr>
-      <tr><td class="mn">Tomoki</td><td>2期</td><td>🚙🍳★</td><td><span class="badge bg">両日宿泊</span></td><td>—</td><td>12:00</td><td>買い出し組</td><td>Tomoki car</td><td>5-6カット</td><td>16:00</td><td>檜風呂</td><td>美術館</td><td>調整中</td><td>✅参加</td><td>蓼科高原ポーク</td></tr>
-      <tr><td class="mn">みなこちゃん</td><td>2期</td><td></td><td><span class="badge bg">両日宿泊</span></td><td>—</td><td>13:20</td><td>チェックイン前到着</td><td>わかなcar</td><td>5-6カット</td><td>14:00</td><td>檜風呂</td><td>—</td><td>調整中</td><td>❌不参加</td><td>—</td></tr>
-      <tr><td class="mn">おつね</td><td>2期</td><td>★</td><td><span class="badge bg">両日宿泊</span></td><td>—</td><td>14:15〜</td><td>チェックイン後到着</td><td>TAXI</td><td>5-6カット</td><td>16:34</td><td>足湯</td><td>旧軽井沢</td><td>調整中</td><td>✅参加</td><td>信州サーモン</td></tr>
-      <tr><td class="mn">ちえっぴ</td><td>2期</td><td>🍳</td><td><span class="badge bg">両日宿泊</span></td><td>—</td><td>10:32</td><td>ハルニレ組</td><td>Tomoki car</td><td>5-6カット</td><td>12:30</td><td>平谷棟</td><td>旧軽井沢</td><td>調整中</td><td>✅参加</td><td>信州サーモン</td></tr>
-      <tr><td class="mn">さーや</td><td>2期</td><td></td><td><span class="badge bg">両日宿泊</span></td><td>—</td><td>10:32</td><td>ハルニレ組</td><td>イワトモcar</td><td>なし</td><td>—</td><td>サウナ</td><td>—</td><td>調整中</td><td>✅参加</td><td>未回答</td></tr>
-      <tr><td class="mn">Mika</td><td>3期</td><td></td><td><span class="badge bg">両日宿泊</span></td><td>—</td><td>—</td><td>3期ランチ組</td><td>Erika car</td><td>1-2カット</td><td>14:34</td><td>サウナ</td><td>どれでも</td><td>調整中</td><td>✅参加</td><td>未回答</td></tr>
-      <tr><td class="mn">みかん</td><td>3期</td><td></td><td><span class="badge bg">両日宿泊</span></td><td>—</td><td>10:32</td><td>3期ランチ組</td><td>おまめcar</td><td>1-2カット</td><td>16:18</td><td>サウナ</td><td>旧軽井沢</td><td>調整中</td><td>❌不参加</td><td>—</td></tr>
-      <tr><td class="mn">しほママ</td><td>3期</td><td></td><td><span class="badge bg">両日宿泊</span></td><td>—</td><td>10:32</td><td>3期ランチ組</td><td>Erika car</td><td>1-2カット</td><td>14:38</td><td>足湯</td><td>旧軽井沢</td><td>調整中</td><td>✅参加</td><td>信州サーモン</td></tr>
-      <tr><td class="mn">mayumi</td><td>3期</td><td></td><td><span class="badge bg">両日宿泊</span></td><td>—</td><td>10:32</td><td>3期ランチ組</td><td>ロールパンナcar</td><td>1-2カット</td><td>14:26</td><td>平谷棟</td><td>旧軽井沢</td><td>調整中</td><td>✅参加</td><td>未回答</td></tr>
-      <tr><td class="mn">くるみん</td><td>3期</td><td></td><td><span class="badge bg">両日宿泊</span></td><td>—</td><td>—</td><td>3期ランチ組</td><td>ロールパンナcar</td><td>1-2カット</td><td>16:10</td><td>サウナ</td><td>旧軽井沢</td><td>調整中</td><td>❌不参加</td><td>—</td></tr>
-      <tr><td class="mn">みづき</td><td>3期</td><td></td><td><span class="badge bg">両日宿泊</span></td><td>—</td><td>12:36</td><td>3期ランチ組</td><td>おまめcar</td><td>なし</td><td>—</td><td>檜風呂</td><td>旧軽井沢</td><td>調整中</td><td>✅参加</td><td>信州サーモン</td></tr>
-      <tr><td class="mn">ロールパンナ</td><td>3期</td><td>★🚙</td><td><span class="badge bg">両日宿泊</span></td><td>—</td><td>12:00</td><td>買い出し組</td><td>ロールパンナcar</td><td>1-2カット</td><td>16:26</td><td>平谷棟</td><td>旧軽井沢</td><td>調整中</td><td>✅参加</td><td>未回答</td></tr>
-      <tr><td class="mn">しお</td><td>3期</td><td></td><td><span class="badge bg">両日宿泊</span></td><td>—</td><td>—</td><td>3期ランチ組</td><td>ロールパンナcar</td><td>1-2カット</td><td>14:22</td><td>足湯</td><td>どれでも</td><td>調整中</td><td>✅参加</td><td>蓼科高原ポーク</td></tr>
-      <tr><td class="mn">いく</td><td>3期</td><td></td><td><span class="badge bg">両日宿泊</span></td><td>—</td><td>—</td><td>3期ランチ組</td><td>ロールパンナcar</td><td>1-2カット</td><td>14:30</td><td>平谷棟</td><td>美術館</td><td>調整中</td><td>❌不参加</td><td>—</td></tr>
-      <tr><td class="mn">tan</td><td>3期</td><td></td><td><span class="badge bg">両日宿泊</span></td><td>—</td><td>—</td><td>3期ランチ組</td><td>Erika car</td><td>なし</td><td>—</td><td>足湯</td><td>旧軽井沢</td><td>調整中</td><td>✅参加</td><td>信州サーモン</td></tr>
-      <tr><td class="mn">なるみん</td><td>3期</td><td></td><td><span class="badge bg">両日宿泊</span></td><td>—</td><td>—</td><td>3期ランチ組</td><td>おまめcar</td><td>1-2カット</td><td>16:14</td><td>檜風呂</td><td>美術館</td><td>調整中</td><td>✅参加</td><td>信州サーモン</td></tr>
-      <tr><td class="mn">Minami</td><td>3期</td><td>★</td><td><span class="badge bg">両日宿泊</span></td><td>—</td><td>14:15〜</td><td>チェックイン後到着</td><td>TAXI</td><td>1-2カット</td><td>16:22</td><td>足湯</td><td>どれでも</td><td>調整中</td><td>✅参加</td><td>信州サーモン</td></tr>
-      <tr><td class="mn">nozomi</td><td>3期</td><td>🍳</td><td><span class="badge bg">両日宿泊</span></td><td style="color:var(--rose-dark);font-weight:700;">鯖・にしん</td><td>10:32</td><td>買い出し組</td><td>なかcar</td><td>1-2カット</td><td>16:30</td><td>サウナ</td><td>旧軽井沢</td><td>調整中</td><td>✅参加</td><td>未回答</td></tr>
-      <tr><td class="mn">Erika</td><td>3期</td><td>🚙</td><td><span class="badge bg">両日宿泊</span></td><td>—</td><td>11時前</td><td>3期ランチ組</td><td>Erika car</td><td>なし</td><td>—</td><td>檜風呂</td><td>—</td><td>調整中</td><td>✅参加</td><td>信州サーモン</td></tr>
-      <tr><td class="mn">ゆうちゃん</td><td>1期</td><td></td><td><span class="badge bo">両日日帰り</span></td><td>—</td><td>—</td><td>ハルニレ組</td><td>NAMI car</td><td>5-6カット</td><td>12:00</td><td>—</td><td>美術館</td><td>調整中</td><td>✅参加</td><td>信州サーモン</td></tr>
+      <tr><td class="mn">リエ</td><td>講師</td><td></td><td><span class="badge bg">両日宿泊</span></td><td>—</td><td>10:32</td><td>ハルニレ組</td><td>イワトモcar</td><td>5-6カット</td><td>11:30</td><td>足湯棟</td><td>どれでも</td><td>わかなcar</td><td>✅参加</td><td>信州サーモン</td></tr>
+      <tr><td class="mn">イワトモ</td><td>講師</td><td>🚙</td><td><span class="badge bg">両日宿泊</span></td><td style="color:var(--rose-dark);font-weight:700;">桃・さくらんぼ</td><td>—</td><td>ハルニレ組</td><td>イワトモcar</td><td>5-6カット</td><td>11:50</td><td>平屋棟</td><td>美術館</td><td>イワトモcar</td><td>✅参加</td><td>信州サーモン</td></tr>
+      <tr><td class="mn">なか</td><td>講師</td><td>🚙</td><td><span class="badge bg">両日宿泊</span></td><td>—</td><td>12:00</td><td>買い出し組</td><td>なかcar</td><td>なし</td><td>—</td><td>サウナ棟</td><td>どれでも</td><td>なかcar</td><td>✅参加</td><td>未回答</td></tr>
+      <tr><td class="mn">わか</td><td>0期</td><td>🚙★</td><td><span class="badge bg">両日宿泊</span></td><td style="color:var(--rose-dark);font-weight:700;">そば・長芋</td><td>10:30</td><td>ハルニレ組</td><td>わかなcar</td><td>5-6カット</td><td>12:00</td><td>檜風呂</td><td>どれでも</td><td>わかなcar</td><td>✅参加</td><td>信州サーモン</td></tr>
+      <tr><td class="mn">さっきー</td><td>1期</td><td></td><td><span class="badge bg">両日宿泊</span></td><td>—</td><td>10:32</td><td>ハルニレ組</td><td>NAMI car</td><td>5-6カット</td><td>12:10</td><td>平屋棟</td><td>旧軽井沢</td><td>なかcar</td><td>✅参加</td><td>未回答</td></tr>
+      <tr><td class="mn">わだちゃん</td><td>1期</td><td></td><td><span class="badge bg">両日宿泊</span></td><td>—</td><td>13:20</td><td>チェックイン前到着</td><td>わかなcar</td><td>1-2カット</td><td>14:18</td><td>檜風呂</td><td>旧軽井沢</td><td>NAMI car</td><td>❌不参加</td><td>—</td></tr>
+      <tr><td class="mn">まめちゃん</td><td>1期</td><td>★</td><td><span class="badge bg">両日宿泊</span></td><td>—</td><td>10:32</td><td>ハルニレ組</td><td>NAMI car</td><td>1-2カット</td><td>12:40</td><td>サウナ棟</td><td>美術館</td><td>イワトモcar</td><td>✅参加</td><td>蓼科高原ポーク</td></tr>
+      <tr><td class="mn">NAMIちゃん</td><td>1期</td><td>🚙</td><td><span class="badge bg">両日宿泊</span></td><td>—</td><td>10:30</td><td>ハルニレ組</td><td>NAMI car</td><td>なし</td><td>—</td><td>足湯棟</td><td>旧軽井沢</td><td>NAMI car</td><td>❌不参加</td><td>—</td></tr>
+      <tr><td class="mn">たか</td><td>1期</td><td></td><td><span class="badge bg">両日宿泊</span></td><td>—</td><td>13:20</td><td>チェックイン前到着</td><td>わかなcar</td><td>1-2カット</td><td>14:14</td><td>足湯棟</td><td>どれでも</td><td>Tomoki car</td><td>❌不参加</td><td>—</td></tr>
+      <tr><td class="mn">よっしー</td><td>2期</td><td></td><td><span class="badge bg">両日宿泊</span></td><td>—</td><td>15:20〜</td><td>チェックイン後到着</td><td>TAXI</td><td>5-6カット</td><td>16:44</td><td>平屋棟</td><td>美術館</td><td>イワトモcar</td><td>✅参加</td><td>信州サーモン</td></tr>
+      <tr><td class="mn">Tomoki</td><td>2期</td><td>🚙🍳★</td><td><span class="badge bg">両日宿泊</span></td><td>—</td><td>12:00</td><td>買い出し組</td><td>Tomoki car</td><td>5-6カット</td><td>16:00</td><td>檜風呂</td><td>美術館</td><td>Tomoki car</td><td>✅参加</td><td>蓼科高原ポーク</td></tr>
+      <tr><td class="mn">みなこちゃん</td><td>2期</td><td></td><td><span class="badge bg">両日宿泊</span></td><td>—</td><td>13:20</td><td>チェックイン前到着</td><td>わかなcar</td><td>5-6カット</td><td>14:00</td><td>サウナ棟</td><td>—</td><td>NAMI car</td><td>❌不参加</td><td>—</td></tr>
+      <tr><td class="mn">おつね</td><td>2期</td><td>★</td><td><span class="badge bg">両日宿泊</span></td><td>—</td><td>14:15〜</td><td>チェックイン後到着</td><td>TAXI</td><td>5-6カット</td><td>16:34</td><td>足湯棟</td><td>旧軽井沢</td><td>なかcar</td><td>✅参加</td><td>信州サーモン</td></tr>
+      <tr><td class="mn">ちえっぴ</td><td>2期</td><td>🍳</td><td><span class="badge bg">両日宿泊</span></td><td>—</td><td>10:32</td><td>ハルニレ組</td><td>Tomoki car</td><td>5-6カット</td><td>11:40</td><td>平屋棟</td><td>旧軽井沢</td><td>ロールパンナcar</td><td>✅参加</td><td>信州サーモン</td></tr>
+      <tr><td class="mn">Mika</td><td>3期</td><td></td><td><span class="badge bg">両日宿泊</span></td><td>—</td><td>—</td><td>3期ランチ組</td><td>Erika car</td><td>1-2カット</td><td>14:34</td><td>サウナ棟</td><td>どれでも</td><td>わかなcar</td><td>✅参加</td><td>信州サーモン</td></tr>
+      <tr><td class="mn">みかん</td><td>3期</td><td></td><td><span class="badge bg">両日宿泊</span></td><td>—</td><td>10:32</td><td>3期ランチ組</td><td>おまめcar</td><td>1-2カット</td><td>16:18</td><td>サウナ棟</td><td>旧軽井沢</td><td>NAMI car</td><td>❌不参加</td><td>—</td></tr>
+      <tr><td class="mn">しほママ</td><td>3期</td><td></td><td><span class="badge bg">両日宿泊</span></td><td>—</td><td>10:32</td><td>3期ランチ組</td><td>Erika car</td><td>1-2カット</td><td>14:38</td><td>足湯棟</td><td>旧軽井沢</td><td>ロールパンナcar</td><td>✅参加</td><td>信州サーモン</td></tr>
+      <tr><td class="mn">mayumi</td><td>3期</td><td></td><td><span class="badge bg">両日宿泊</span></td><td>—</td><td>10:32</td><td>3期ランチ組</td><td>ロールパンナcar</td><td>1-2カット</td><td>14:26</td><td>平屋棟</td><td>旧軽井沢</td><td>わかなcar</td><td>✅参加</td><td>蓼科高原ポーク</td></tr>
+      <tr><td class="mn">くるみん</td><td>3期</td><td></td><td><span class="badge bg">両日宿泊</span></td><td>—</td><td>—</td><td>3期ランチ組</td><td>ロールパンナcar</td><td>1-2カット</td><td>16:10</td><td>サウナ棟</td><td>旧軽井沢</td><td>NAMI car</td><td>❌不参加</td><td>—</td></tr>
+      <tr><td class="mn">みづき</td><td>3期</td><td></td><td><span class="badge bg">両日宿泊</span></td><td>—</td><td>12:36</td><td>3期ランチ組</td><td>おまめcar</td><td>なし</td><td>—</td><td>檜風呂</td><td>旧軽井沢</td><td>なかcar</td><td>✅参加</td><td>信州サーモン</td></tr>
+      <tr><td class="mn">ロールパンナ</td><td>3期</td><td>★🚙</td><td><span class="badge bg">両日宿泊</span></td><td>—</td><td>12:00</td><td>買い出し組</td><td>ロールパンナcar</td><td>1-2カット</td><td>16:26</td><td>平屋棟</td><td>旧軽井沢</td><td>ロールパンナcar</td><td>✅参加</td><td>信州サーモン</td></tr>
+      <tr><td class="mn">しお</td><td>3期</td><td></td><td><span class="badge bg">両日宿泊</span></td><td>—</td><td>—</td><td>3期ランチ組</td><td>ロールパンナcar</td><td>1-2カット</td><td>14:22</td><td>檜風呂</td><td>どれでも</td><td>ロールパンナcar</td><td>✅参加</td><td>蓼科高原ポーク</td></tr>
+      <tr><td class="mn">いく</td><td>3期</td><td></td><td><span class="badge bg">両日宿泊</span></td><td>—</td><td>—</td><td>3期ランチ組</td><td>ロールパンナcar</td><td>1-2カット</td><td>14:30</td><td>平屋棟</td><td>美術館</td><td>Tomoki car</td><td>❌不参加</td><td>—</td></tr>
+      <tr><td class="mn">tan</td><td>3期</td><td></td><td><span class="badge bg">両日宿泊</span></td><td>—</td><td>—</td><td>3期ランチ組</td><td>Erika car</td><td>なし</td><td>—</td><td>足湯棟</td><td>旧軽井沢</td><td>ロールパンナcar</td><td>✅参加</td><td>信州サーモン</td></tr>
+      <tr><td class="mn">なるみん</td><td>3期</td><td></td><td><span class="badge bg">両日宿泊</span></td><td>—</td><td>—</td><td>3期ランチ組</td><td>おまめcar</td><td>1-2カット</td><td>16:14</td><td>檜風呂</td><td>美術館</td><td>イワトモcar</td><td>✅参加</td><td>信州サーモン</td></tr>
+      <tr><td class="mn">Minami</td><td>3期</td><td>★</td><td><span class="badge bg">両日宿泊</span></td><td>—</td><td>14:15〜</td><td>チェックイン後到着</td><td>TAXI</td><td>1-2カット</td><td>16:22</td><td>足湯棟</td><td>どれでも</td><td>わかなcar</td><td>✅参加</td><td>信州サーモン</td></tr>
+      <tr><td class="mn">nozomi</td><td>3期</td><td>🍳</td><td><span class="badge bg">両日宿泊</span></td><td style="color:var(--rose-dark);font-weight:700;">鯖・にしん</td><td>10:32</td><td>買い出し組</td><td>なかcar</td><td>1-2カット</td><td>16:30</td><td>サウナ棟</td><td>旧軽井沢</td><td>なかcar</td><td>✅参加</td><td>蓼科高原ポーク</td></tr>
+      <tr><td class="mn">Erika</td><td>3期</td><td>🚙</td><td><span class="badge bg">両日宿泊</span></td><td>—</td><td>11時前</td><td>3期ランチ組</td><td>Erika car</td><td>なし</td><td>—</td><td>檜風呂</td><td>—</td><td>Erika car</td><td>✅参加</td><td>信州サーモン</td></tr>
+      <tr><td class="mn">ゆうちゃん</td><td>1期</td><td></td><td><span class="badge bo">両日日帰り</span></td><td>—</td><td>—</td><td>ハルニレ組</td><td>NAMI car</td><td>5-6カット</td><td>12:30</td><td>—</td><td>美術館</td><td>イワトモcar</td><td>✅参加</td><td>信州サーモン</td></tr>
       <tr><td class="mn">おまめさん</td><td>3期</td><td>🍳🚙</td><td><span class="badge bo">6日のみ日帰り</span></td><td>—</td><td>12:00</td><td>買い出し組</td><td>おまめcar</td><td>1-2カット</td><td>14:10</td><td>—</td><td>—</td><td>—</td><td>❌不参加</td><td>—</td></tr>
       <tr><td class="mn">あやや</td><td>2期</td><td></td><td><span class="badge bo">6日のみ日帰り</span></td><td>—</td><td>—</td><td>ハルニレ組</td><td>イワトモcar</td><td>5-6カット</td><td>12:20</td><td>—</td><td>—</td><td>—</td><td>❌不参加</td><td>—</td></tr>
     </tbody>
@@ -649,86 +777,52 @@ tr:last-child td{border-bottom:none;}
   <div class="note" style="margin-top:12px;"><strong>凡例：</strong>★幹事　🍳料理担当　🚙自家用車あり<br>アレルギーが赤字で表示されている方は食事提供時にご注意ください。</div>
 </div>
 
-<!-- ===== 宿泊施設 ===== -->
-<div class="section" id="villa">
-  <div class="section-title" style="color:var(--teal-dark)"><span>🏡</span>宿泊施設</div>
-  <div style="background:white;border-radius:14px;padding:22px 24px;box-shadow:var(--shadow);max-width:640px;">
-    <div style="font-size:1.1em;font-weight:800;color:var(--teal-dark);margin-bottom:14px;">別邸シリーズ 軽井沢</div>
-    <div style="display:grid;gap:10px;font-size:.9em;">
-      <div style="display:flex;gap:12px;align-items:flex-start;">
-        <span style="font-size:1.2em;flex-shrink:0;">📍</span>
-        <div><div style="font-weight:700;color:var(--text-mid);font-size:.8em;margin-bottom:2px;">住所</div>長野県北佐久郡軽井沢町長倉4588-38</div>
-      </div>
-      <div style="display:flex;gap:12px;align-items:flex-start;">
-        <span style="font-size:1.2em;flex-shrink:0;">🌐</span>
-        <div><div style="font-weight:700;color:var(--text-mid);font-size:.8em;margin-bottom:2px;">公式HP</div><a href="https://karuizawa-house-villa.com/" target="_blank" style="color:var(--teal-dark);word-break:break-all;">https://karuizawa-house-villa.com/</a></div>
-      </div>
-      <div style="display:flex;gap:12px;align-items:flex-start;">
-        <span style="font-size:1.2em;flex-shrink:0;">📸</span>
-        <div><div style="font-weight:700;color:var(--text-mid);font-size:.8em;margin-bottom:2px;">Instagram</div><a href="https://www.instagram.com/housevilla.karuizawa/" target="_blank" style="color:var(--teal-dark);">@housevilla.karuizawa</a></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ===== ガイド ===== -->
-<div class="section" id="guide">
-  <div class="section-title" style="color:var(--peach-dark)"><span>🗺</span>軽井沢 エリアガイド</div>
-  <div class="gg">
-    <div class="gi"><img src="S__211271685_0.jpg" alt="ハルニレテラスガイド" loading="lazy"><div class="gc" style="color:var(--sage-dark);">🌳 ハルニレテラス 完全ガイド</div></div>
-    <div class="gi"><img src="S__211271683_0.jpg" alt="旧軽井沢ガイド" loading="lazy"><div class="gc" style="color:var(--rose-dark);">🏘 旧軽井沢 おすすめスポット</div></div>
-    <div class="gi"><img src="S__211271684_0.jpg" alt="T-SITEガイド" loading="lazy"><div class="gc" style="color:var(--blue-dark);">📚 軽井沢 T-SITE 完全ガイド</div></div>
-    <div class="gi"><img src="S__211271686_0.jpg" alt="ドライブ所要時間" loading="lazy"><div class="gc" style="color:var(--teal-dark);">🚗 ドライブ所要時間ガイド</div></div>
-  </div>
-</div>
-
 <div class="footer">
   🌿 Skip F 軽井沢合宿 2026年6月6日〜7日 🌿
-  <div style="margin-top:5px;font-size:.8em;">※ 暫定版。配車・2日目行程は変更になる場合があります。</div>
+  
 </div>
 
 <script>
 const members = {
-  'リエ':       { ki:'講師',yaku:'',status:'両日宿泊',allergy:'—',arrival:'10:32 軽井沢駅（はくたか557号）',team:'ハルニレテラス組',car:'イワトモcar（ドライバー：イワトモ）',carFrom:'ハルニレテラスから出発',photo:'📍 ハルニレテラス 11:30（5-6カット）',room:'足湯',day2course:'どれでも',lunch:'✅ 参加予定',lunchMenu:'信州サーモン',drink:'未回答' },
-  'イワトモ':   { ki:'講師',yaku:'🚙',status:'両日宿泊',allergy:'🚨 桃・さくらんぼ',arrival:'11:00 ハルニレテラス着（車）',team:'ハルニレテラス組',car:'イワトモcar（ドライバー：自分）',carFrom:'ハルニレテラスから出発',photo:'📍 ハルニレテラス 11:40（5-6カット）',room:'平谷棟',day2course:'美術館',lunch:'❓ 未定',lunchMenu:'信州サーモン',drink:'ビール・水・お茶' },
-  'なか':       { ki:'講師',yaku:'🚙',status:'両日宿泊',allergy:'—',arrival:'12:00 ツルヤ御代田（車）',team:'買い出し組',car:'なかcar（ドライバー：自分）',carFrom:'ツルヤ御代田から出発',photo:'撮影なし',room:'サウナ',day2course:'どれでも',lunch:'✅ 参加予定',lunchMenu:'未回答',drink:'水・お茶' },
-  'わか':       { ki:'0期',yaku:'🚙★',status:'両日宿泊',allergy:'🚨 そば・長芋',arrival:'10:30 ハルニレテラス着（車）',team:'ハルニレテラス組',car:'わかなcar（ドライバー：自分）',carFrom:'軽井沢駅でたか・わだちゃん・みなこちゃんをピックアップ後 ヴィラへ',photo:'📍 ハルニレテラス 11:50（5-6カット）',room:'檜風呂',day2course:'どれでも',lunch:'✅ 参加予定',lunchMenu:'信州サーモン',drink:'水・お茶' },
-  'さっきー':   { ki:'1期',yaku:'',status:'両日宿泊',allergy:'—',arrival:'10:32 軽井沢駅（はくたか557号）',team:'ハルニレテラス組',car:'NAMI car（ドライバー：NAMIちゃん）',carFrom:'ハルニレテラスから出発',photo:'📍 ハルニレテラス 12:10（5-6カット）',room:'平谷棟',day2course:'旧軽井沢',lunch:'✅ 参加予定',lunchMenu:'未回答',drink:'ビール・チューハイ・水' },
-  'わだちゃん': { ki:'1期',yaku:'',status:'両日宿泊',allergy:'—',arrival:'13:20 軽井沢駅（電車）',team:'チェックイン前到着組',car:'わかなcar（ドライバー：わか）',carFrom:'軽井沢駅からピックアップ',photo:'📍 ヴィラ 14:18（1-2カット）',room:'檜風呂',day2course:'旧軽井沢',lunch:'❌ 不参加（帰宅）',lunchMenu:'—',drink:'未回答' },
-  'まめちゃん': { ki:'1期',yaku:'★',status:'両日宿泊',allergy:'—',arrival:'10:32 軽井沢駅（はくたか557号）',team:'ハルニレテラス組',car:'NAMI car（ドライバー：NAMIちゃん）',carFrom:'ハルニレテラスから出発',photo:'📍 ハルニレテラス 12:40（1-2カット）',room:'サウナ',day2course:'美術館',lunch:'✅ 参加予定',lunchMenu:'蓼科高原ポーク',drink:'ノンアル・水' },
-  'NAMIちゃん': { ki:'1期',yaku:'🚙',status:'両日宿泊',allergy:'—',arrival:'10:30 ハルニレテラス着（車）',team:'ハルニレテラス組',car:'NAMI car（ドライバー：自分）',carFrom:'ハルニレテラスから出発',photo:'撮影なし',room:'足湯',day2course:'—',lunch:'❓ 未定',lunchMenu:'未回答',drink:'ノンアル・水・お茶' },
-  'たか':       { ki:'1期',yaku:'',status:'両日宿泊',allergy:'—',arrival:'13:20 軽井沢駅（電車）',team:'チェックイン前到着組',car:'わかなcar（ドライバー：わか）',carFrom:'軽井沢駅からピックアップ',photo:'📍 ヴィラ 14:14（1-2カット）',room:'足湯',day2course:'どれでも',lunch:'❌ 不参加（帰宅）',lunchMenu:'—',drink:'ビール・チューハイ・お茶' },
-  'よっしー':   { ki:'2期',yaku:'',status:'両日宿泊',allergy:'—',arrival:'15:20or16:15 軽井沢駅（電車）',team:'チェックイン後到着組',car:'TAXI',carFrom:'軽井沢駅からタクシーでヴィラへ',photo:'📍 ヴィラ 16:44（5-6カット）',room:'平谷棟',day2course:'美術館',lunch:'✅ 参加予定',lunchMenu:'信州サーモン',drink:'未回答' },
-  'Tomoki':     { ki:'2期',yaku:'🚙🍳★',status:'両日宿泊',allergy:'—',arrival:'12:00 ツルヤ御代田（車）',team:'買い出し組',car:'Tomoki car（ドライバー：自分）',carFrom:'ハルニレ経由 → ツルヤ → ヴィラ',photo:'📍 ヴィラ 16:00（5-6カット）',room:'檜風呂',day2course:'美術館',lunch:'✅ 参加予定',lunchMenu:'蓼科高原ポーク',drink:'白ワイン・スパークリング・ハイボール・ノンアル・水' },
-  'みなこちゃん':{ ki:'2期',yaku:'',status:'両日宿泊',allergy:'—',arrival:'13:20 軽井沢駅（電車）',team:'チェックイン前到着組',car:'わかなcar（ドライバー：わか）',carFrom:'軽井沢駅からピックアップ',photo:'📍 ヴィラ 14:00（5-6カット）',room:'檜風呂',day2course:'—',lunch:'❌ 不参加（帰宅）',lunchMenu:'—',drink:'チューハイ' },
-  'おつね':     { ki:'2期',yaku:'★',status:'両日宿泊',allergy:'—',arrival:'14:15or15:20 軽井沢駅（電車）',team:'チェックイン後到着組',car:'TAXI',carFrom:'軽井沢駅からタクシーでヴィラへ',photo:'📍 ヴィラ 16:34（5-6カット）',room:'足湯',day2course:'旧軽井沢',lunch:'✅ 参加予定',lunchMenu:'信州サーモン',drink:'ハイボール' },
-  'ちえっぴ':   { ki:'2期',yaku:'🍳',status:'両日宿泊',allergy:'—',arrival:'10:32 軽井沢駅（はくたか557号）',team:'ハルニレテラス組',car:'Tomoki car（ドライバー：Tomoki）',carFrom:'ハルニレテラスでピックアップ後 買い出し経由でヴィラへ',photo:'📍 ハルニレテラス 12:30（5-6カット）',room:'平谷棟',day2course:'旧軽井沢',lunch:'✅ 参加予定',lunchMenu:'信州サーモン',drink:'スパークリング・チューハイ・水' },
-  'さーや':     { ki:'2期',yaku:'',status:'両日宿泊',allergy:'—',arrival:'10:32 軽井沢駅（はくたか557号）',team:'ハルニレテラス組',car:'イワトモcar（ドライバー：イワトモ）',carFrom:'ハルニレテラスから出発',photo:'撮影なし',room:'サウナ',day2course:'—',lunch:'✅ 参加予定',lunchMenu:'未回答',drink:'チューハイ・水・お茶' },
-  'Mika':       { ki:'3期',yaku:'',status:'両日宿泊',allergy:'—',arrival:'— （3期ランチ会チームと合流）',team:'3期ランチ会組',car:'Erika car（ドライバー：Erika）',carFrom:'ピエトリーノ方面からヴィラへ',photo:'📍 ヴィラ 14:34（1-2カット）',room:'サウナ',day2course:'どれでも',lunch:'✅ 参加予定',lunchMenu:'未回答',drink:'ビール' },
-  'みかん':     { ki:'3期',yaku:'',status:'両日宿泊',allergy:'—',arrival:'10:32 軽井沢駅（電車）',team:'3期ランチ会組',car:'おまめcar（ドライバー：おまめさん）',carFrom:'ピエトリーノ方面からヴィラへ',photo:'📍 ヴィラ 16:18（1-2カット）',room:'サウナ',day2course:'旧軽井沢',lunch:'❌ 不参加（ランチ前に帰宅）',lunchMenu:'—',drink:'ビール・お茶' },
-  'しほママ':   { ki:'3期',yaku:'',status:'両日宿泊',allergy:'—',arrival:'10:32 軽井沢駅（電車）',team:'3期ランチ会組',car:'Erika car（ドライバー：Erika）',carFrom:'ピエトリーノ方面からヴィラへ',photo:'📍 ヴィラ 14:38（1-2カット）',room:'足湯',day2course:'旧軽井沢',lunch:'✅ 参加予定',lunchMenu:'信州サーモン',drink:'ビール・チューハイ・ハイボール' },
-  'mayumi':     { ki:'3期',yaku:'',status:'両日宿泊',allergy:'—',arrival:'10:32 軽井沢駅（電車）',team:'3期ランチ会組',car:'ロールパンナcar（ドライバー：ロールパンナ）',carFrom:'ピエトリーノ方面からヴィラへ',photo:'📍 ヴィラ 14:26（1-2カット）',room:'平谷棟',day2course:'旧軽井沢',lunch:'✅ 参加予定',lunchMenu:'未回答',drink:'ビール・水' },
-  'くるみん':   { ki:'3期',yaku:'',status:'両日宿泊',allergy:'—',arrival:'— （3期ランチ会チームと合流）',team:'3期ランチ会組',car:'ロールパンナcar（ドライバー：ロールパンナ）',carFrom:'ピエトリーノ方面からヴィラへ',photo:'📍 ヴィラ 16:10（1-2カット）',room:'サウナ',day2course:'旧軽井沢',lunch:'❌ 不参加（ランチ前に帰宅）',lunchMenu:'—',drink:'ビール・赤ワイン・お茶' },
-  'みづき':     { ki:'3期',yaku:'',status:'両日宿泊',allergy:'—',arrival:'12:36 軽井沢駅（電車）',team:'3期ランチ会組',car:'おまめcar（ドライバー：おまめさん）',carFrom:'ピエトリーノ方面からヴィラへ',photo:'撮影なし',room:'檜風呂',day2course:'旧軽井沢',lunch:'✅ 参加予定',lunchMenu:'信州サーモン',drink:'ノンアル・水・お茶' },
-  'ロールパンナ':{ ki:'3期',yaku:'★🚙',status:'両日宿泊',allergy:'—',arrival:'12:00 ツルヤ御代田（車）',team:'買い出し組',car:'ロールパンナcar（ドライバー：自分）',carFrom:'ツルヤ → ピエトリーノ → ヴィラ',photo:'📍 ヴィラ 16:26（1-2カット）',room:'平谷棟',day2course:'旧軽井沢',lunch:'✅ 参加予定',lunchMenu:'未回答',drink:'スパークリング' },
-  'しお':       { ki:'3期',yaku:'',status:'両日宿泊',allergy:'—',arrival:'昼頃 軽井沢（電車）',team:'3期ランチ会組',car:'ロールパンナcar（ドライバー：ロールパンナ）',carFrom:'ピエトリーノ方面からヴィラへ',photo:'📍 ヴィラ 14:22（1-2カット）',room:'足湯',day2course:'どれでも',lunch:'✅ 参加予定',lunchMenu:'蓼科高原ポーク',drink:'ビール・チューハイ' },
-  'いく':       { ki:'3期',yaku:'',status:'両日宿泊',allergy:'—',arrival:'— （3期ランチ会チームと合流）',team:'3期ランチ会組',car:'ロールパンナcar（ドライバー：ロールパンナ）',carFrom:'ピエトリーノ方面からヴィラへ',photo:'📍 ヴィラ 14:30（1-2カット）',room:'平谷棟',day2course:'美術館',lunch:'❌ 不参加（帰宅）',lunchMenu:'—',drink:'水・お茶' },
-  'tan':        { ki:'3期',yaku:'',status:'両日宿泊',allergy:'—',arrival:'— （3期ランチ会チームと合流）',team:'3期ランチ会組',car:'Erika car（ドライバー：Erika）',carFrom:'ピエトリーノ方面からヴィラへ',photo:'撮影なし',room:'足湯',day2course:'旧軽井沢',lunch:'✅ 参加予定',lunchMenu:'信州サーモン',drink:'ノンアル・水・お茶' },
-  'なるみん':   { ki:'3期',yaku:'',status:'両日宿泊',allergy:'—',arrival:'— （3期ランチ会チームと合流）',team:'3期ランチ会組',car:'おまめcar（ドライバー：おまめさん）',carFrom:'ピエトリーノ方面からヴィラへ',photo:'📍 ヴィラ 16:14（1-2カット）',room:'檜風呂',day2course:'美術館',lunch:'✅ 参加予定',lunchMenu:'信州サーモン',drink:'ビール・ノンアル' },
-  'Minami':     { ki:'3期',yaku:'★',status:'両日宿泊',allergy:'—',arrival:'14:15or15:22 軽井沢駅（電車 or 車）',team:'チェックイン後到着組',car:'TAXI',carFrom:'軽井沢駅からタクシーでヴィラへ',photo:'📍 ヴィラ 16:22（1-2カット）',room:'足湯',day2course:'どれでも',lunch:'✅ 参加予定',lunchMenu:'信州サーモン',drink:'ノンアル・お茶' },
-  'nozomi':     { ki:'3期',yaku:'🍳',status:'両日宿泊',allergy:'🚨 鯖・にしん',arrival:'10:32 軽井沢駅（はくたか557号）',team:'買い出し組',car:'なかcar（ドライバー：なか）',carFrom:'ツルヤ御代田から出発',photo:'📍 ヴィラ 16:30（1-2カット）',room:'サウナ',day2course:'旧軽井沢',lunch:'✅ 参加予定',lunchMenu:'未回答',drink:'チューハイ・ノンアル・水・お茶' },
-  'Erika':      { ki:'3期',yaku:'🚙',status:'両日宿泊',allergy:'—',arrival:'11時前 軽井沢（車）',team:'3期ランチ会組',car:'Erika car（ドライバー：自分）',carFrom:'ピエトリーノ方面からヴィラへ',photo:'撮影なし',room:'檜風呂',day2course:'—',lunch:'✅ 参加予定',lunchMenu:'信州サーモン',drink:'未回答' },
-  'ゆうちゃん': { ki:'1期',yaku:'',status:'両日 日帰り参加',allergy:'—',arrival:'12時頃 軽井沢（Tomoki車に同乗）',team:'ハルニレテラス組',car:'NAMI car（ドライバー：NAMIちゃん）',carFrom:'ハルニレテラスから出発',photo:'📍 ハルニレテラス 12:00（5-6カット）',room:'日帰りのため なし',day2course:'美術館',lunch:'✅ 参加予定',lunchMenu:'信州サーモン',drink:'ビール・スパークリング・お茶' },
+  'リエ':       { ki:'講師',yaku:'',status:'両日宿泊',allergy:'—',arrival:'10:32 軽井沢駅（はくたか557号）',team:'ハルニレテラス組',car:'イワトモcar（ドライバー：イワトモ）',carFrom:'ハルニレテラスから出発',photo:'📍 ハルニレテラス 11:30（5-6カット）',room:'足湯棟',day2car:'わかなcar',day2course:'旧軽井沢',lunch:'✅ 参加予定',lunchMenu:'信州サーモン',drink:'未回答' },
+  'イワトモ':   { ki:'講師',yaku:'🚙',status:'両日宿泊',allergy:'🚨 桃・さくらんぼ',arrival:'11:00 ハルニレテラス着（車）',team:'ハルニレテラス組',car:'イワトモcar（ドライバー：自分）',carFrom:'ハルニレテラスから出発',photo:'📍 ハルニレテラス 11:50（5-6カット）',room:'平屋棟',day2car:'イワトモcar',day2course:'美術館',lunch:'✅ 参加予定',lunchMenu:'信州サーモン',drink:'ビール・水・お茶' },
+  'なか':       { ki:'講師',yaku:'🚙',status:'両日宿泊',allergy:'—',arrival:'12:00 ツルヤ御代田（車）',team:'買い出し組',car:'なかcar（ドライバー：自分）',carFrom:'ツルヤ御代田から出発',photo:'撮影なし',room:'サウナ棟',day2car:'なかcar',day2course:'旧軽井沢',lunch:'✅ 参加予定',lunchMenu:'未回答',drink:'水・お茶' },
+  'わか':       { ki:'0期',yaku:'🚙★',status:'両日宿泊',allergy:'🚨 そば・長芋',arrival:'10:30 ハルニレテラス着（車）',team:'ハルニレテラス組',car:'わかなcar（ドライバー：自分）',carFrom:'ハルニレテラス → 軽井沢駅（わだちゃん・たか・みなこちゃんをP/U）→ ヴィラ',photo:'📍 ハルニレテラス 12:00（5-6カット）',room:'檜風呂',day2car:'わかなcar',day2course:'旧軽井沢',lunch:'✅ 参加予定',lunchMenu:'信州サーモン',drink:'水・お茶' },
+  'さっきー':   { ki:'1期',yaku:'',status:'両日宿泊',allergy:'—',arrival:'10:32 軽井沢駅（はくたか557号）',team:'ハルニレテラス組',car:'NAMI car（ドライバー：NAMIちゃん）',carFrom:'ハルニレテラスから出発',photo:'📍 ハルニレテラス 12:10（5-6カット）',room:'平屋棟',day2car:'なかcar',day2course:'旧軽井沢',lunch:'✅ 参加予定',lunchMenu:'未回答',drink:'ビール・チューハイ・水' },
+  'わだちゃん': { ki:'1期',yaku:'',status:'両日宿泊',allergy:'—',arrival:'13:20 軽井沢駅（電車）',team:'チェックイン前到着組',car:'わかなcar（ドライバー：わか）',carFrom:'軽井沢駅からピックアップ',photo:'📍 ヴィラ 14:18（1-2カット）',room:'檜風呂',day2car:'NAMI car',day2course:'旧軽井沢 ※13時台新幹線で帰宅',lunch:'❌ 不参加（帰宅）',lunchMenu:'—',drink:'未回答' },
+  'まめちゃん': { ki:'1期',yaku:'★',status:'両日宿泊',allergy:'—',arrival:'10:32 軽井沢駅（はくたか557号）',team:'ハルニレテラス組',car:'NAMI car（ドライバー：NAMIちゃん）',carFrom:'ハルニレテラスから出発',photo:'📍 ハルニレテラス 12:40（1-2カット）',room:'サウナ棟',day2car:'イワトモcar',day2course:'美術館',lunch:'✅ 参加予定',lunchMenu:'蓼科高原ポーク',drink:'ノンアル・水' },
+  'NAMIちゃん': { ki:'1期',yaku:'🚙',status:'両日宿泊',allergy:'—',arrival:'10:30 ハルニレテラス着（車）',team:'ハルニレテラス組',car:'NAMI car（ドライバー：自分）',carFrom:'ハルニレテラスから出発',photo:'撮影なし',room:'足湯棟',day2car:'NAMI car',day2course:'旧軽井沢',lunch:'❌ 不参加',lunchMenu:'未回答',drink:'ノンアル・水・お茶' },
+  'たか':       { ki:'1期',yaku:'',status:'両日宿泊',allergy:'—',arrival:'13:20 軽井沢駅（電車）',team:'チェックイン前到着組',car:'わかなcar（ドライバー：わか）',carFrom:'軽井沢駅からピックアップ',photo:'📍 ヴィラ 14:14（1-2カット）',room:'足湯棟',day2car:'Tomoki car',day2course:'美術館 ※13時台新幹線で帰宅',lunch:'❌ 不参加（帰宅）',lunchMenu:'—',drink:'ビール・チューハイ・お茶' },
+  'よっしー':   { ki:'2期',yaku:'',status:'両日宿泊',allergy:'—',arrival:'15:20or16:15 軽井沢駅（電車）',team:'チェックイン後到着組',car:'TAXI',carFrom:'軽井沢駅からタクシーでヴィラへ',photo:'📍 ヴィラ 16:44（5-6カット）',room:'平屋棟',day2car:'イワトモcar',day2course:'美術館',lunch:'✅ 参加予定',lunchMenu:'信州サーモン',drink:'未回答' },
+  'Tomoki':     { ki:'2期',yaku:'🚙🍳★',status:'両日宿泊',allergy:'—',arrival:'12:00 ツルヤ御代田（車）',team:'買い出し組',car:'Tomoki car（ドライバー：自分）',carFrom:'ハルニレ経由 → ツルヤ → ヴィラ',photo:'📍 ヴィラ 16:00（5-6カット）',room:'檜風呂',day2car:'Tomoki car',day2course:'美術館',lunch:'✅ 参加予定',lunchMenu:'蓼科高原ポーク',drink:'白ワイン・スパークリング・ハイボール・ノンアル・水' },
+  'みなこちゃん':{ ki:'2期',yaku:'',status:'両日宿泊',allergy:'—',arrival:'13:20 軽井沢駅（電車）',team:'チェックイン前到着組',car:'わかなcar（ドライバー：わか）',carFrom:'軽井沢駅からピックアップ',photo:'📍 ヴィラ 14:00（5-6カット）',room:'サウナ棟',day2car:'NAMI car',day2course:'旧軽井沢 ※13時台新幹線で帰宅',lunch:'❌ 不参加（帰宅）',lunchMenu:'—',drink:'チューハイ' },
+  'おつね':     { ki:'2期',yaku:'★',status:'両日宿泊',allergy:'—',arrival:'14:15or15:20 軽井沢駅（電車）',team:'チェックイン後到着組',car:'TAXI',carFrom:'軽井沢駅からタクシーでヴィラへ',photo:'📍 ヴィラ 16:34（5-6カット）',room:'足湯棟',day2car:'なかcar',day2course:'旧軽井沢',lunch:'✅ 参加予定',lunchMenu:'信州サーモン',drink:'ハイボール' },
+  'ちえっぴ':   { ki:'2期',yaku:'🍳',status:'両日宿泊',allergy:'—',arrival:'10:32 軽井沢駅（はくたか557号）',team:'ハルニレテラス組',car:'Tomoki car（ドライバー：Tomoki）',carFrom:'ハルニレテラスでピックアップ後 買い出し経由でヴィラへ',photo:'📍 ハルニレテラス 11:40（5-6カット）',room:'平屋棟',day2car:'ロールパンナcar',day2course:'旧軽井沢',lunch:'✅ 参加予定',lunchMenu:'信州サーモン',drink:'スパークリング・チューハイ・水' },
+  'Mika':       { ki:'3期',yaku:'',status:'両日宿泊',allergy:'—',arrival:'— （3期ランチ会チームと合流）',team:'3期ランチ会組',car:'Erika car（ドライバー：Erika）',carFrom:'ピエトリーノ方面からヴィラへ',photo:'📍 ヴィラ 14:34（1-2カット）',room:'サウナ棟',day2car:'わかなcar',day2course:'旧軽井沢',lunch:'✅ 参加予定',lunchMenu:'信州サーモン',drink:'ビール' },
+  'みかん':     { ki:'3期',yaku:'',status:'両日宿泊',allergy:'—',arrival:'10:32 軽井沢駅（電車）',team:'3期ランチ会組',car:'おまめcar（ドライバー：おまめさん）',carFrom:'ピエトリーノ方面からヴィラへ',photo:'📍 ヴィラ 16:18（1-2カット）',room:'サウナ棟',day2car:'NAMI car',day2course:'旧軽井沢 ※13時台新幹線で帰宅',lunch:'❌ 不参加（ランチ前に帰宅）',lunchMenu:'—',drink:'ビール・お茶' },
+  'しほママ':   { ki:'3期',yaku:'',status:'両日宿泊',allergy:'—',arrival:'10:32 軽井沢駅（電車）',team:'3期ランチ会組',car:'Erika car（ドライバー：Erika）',carFrom:'ピエトリーノ方面からヴィラへ',photo:'📍 ヴィラ 14:38（1-2カット）',room:'足湯棟',day2car:'ロールパンナcar',day2course:'旧軽井沢',lunch:'✅ 参加予定',lunchMenu:'信州サーモン',drink:'ビール・チューハイ・ハイボール' },
+  'mayumi':     { ki:'3期',yaku:'',status:'両日宿泊',allergy:'—',arrival:'10:32 軽井沢駅（電車）',team:'3期ランチ会組',car:'ロールパンナcar（ドライバー：ロールパンナ）',carFrom:'ピエトリーノ方面からヴィラへ',photo:'📍 ヴィラ 14:26（1-2カット）',room:'平屋棟',day2car:'わかなcar',day2course:'旧軽井沢',lunch:'✅ 参加予定',lunchMenu:'蓼科高原ポーク',drink:'ビール・水' },
+  'くるみん':   { ki:'3期',yaku:'',status:'両日宿泊',allergy:'—',arrival:'— （3期ランチ会チームと合流）',team:'3期ランチ会組',car:'ロールパンナcar（ドライバー：ロールパンナ）',carFrom:'ツルヤ → 3期ランチ（ロールパンナcarでヴィラへ）',photo:'📍 ヴィラ 16:10（1-2カット）',room:'サウナ棟',day2car:'NAMI car',day2course:'旧軽井沢 ※13時台新幹線で帰宅',lunch:'❌ 不参加（ランチ前に帰宅）',lunchMenu:'—',drink:'ビール・赤ワイン・お茶' },
+  'みづき':     { ki:'3期',yaku:'',status:'両日宿泊',allergy:'—',arrival:'12:36 軽井沢駅（電車）',team:'3期ランチ会組',car:'おまめcar（ドライバー：おまめさん）',carFrom:'ピエトリーノ方面からヴィラへ',photo:'撮影なし',room:'檜風呂',day2car:'なかcar',day2course:'旧軽井沢',lunch:'✅ 参加予定',lunchMenu:'信州サーモン',drink:'ノンアル・水・お茶' },
+  'ロールパンナ':{ ki:'3期',yaku:'★🚙',status:'両日宿泊',allergy:'—',arrival:'12:00 ツルヤ御代田（車）',team:'買い出し組',car:'ロールパンナcar（ドライバー：自分）',carFrom:'ツルヤ → ピエトリーノ → ヴィラ',photo:'📍 ヴィラ 16:26（1-2カット）',room:'平屋棟',day2car:'ロールパンナcar',day2course:'旧軽井沢',lunch:'✅ 参加予定',lunchMenu:'信州サーモン',drink:'スパークリング' },
+  'しお':       { ki:'3期',yaku:'',status:'両日宿泊',allergy:'—',arrival:'昼頃 軽井沢（電車）',team:'3期ランチ会組',car:'ロールパンナcar（ドライバー：ロールパンナ）',carFrom:'ピエトリーノ方面からヴィラへ',photo:'📍 ヴィラ 14:22（1-2カット）',room:'檜風呂',day2car:'ロールパンナcar',day2course:'旧軽井沢',lunch:'✅ 参加予定',lunchMenu:'蓼科高原ポーク',drink:'ビール・チューハイ' },
+  'いく':       { ki:'3期',yaku:'',status:'両日宿泊',allergy:'—',arrival:'— （3期ランチ会チームと合流）',team:'3期ランチ会組',car:'ロールパンナcar（ドライバー：ロールパンナ）',carFrom:'ピエトリーノ方面からヴィラへ',photo:'📍 ヴィラ 14:30（1-2カット）',room:'平屋棟',day2car:'Tomoki car',day2course:'美術館 ※13時台新幹線で帰宅',lunch:'❌ 不参加（帰宅）',lunchMenu:'—',drink:'水・お茶' },
+  'tan':        { ki:'3期',yaku:'',status:'両日宿泊',allergy:'—',arrival:'— （3期ランチ会チームと合流）',team:'3期ランチ会組',car:'Erika car（ドライバー：Erika）',carFrom:'ピエトリーノ方面からヴィラへ',photo:'撮影なし',room:'足湯棟',day2car:'ロールパンナcar',day2course:'旧軽井沢',lunch:'✅ 参加予定',lunchMenu:'信州サーモン',drink:'ノンアル・水・お茶' },
+  'なるみん':   { ki:'3期',yaku:'',status:'両日宿泊',allergy:'—',arrival:'— （3期ランチ会チームと合流）',team:'3期ランチ会組',car:'おまめcar（ドライバー：おまめさん）',carFrom:'ピエトリーノ方面からヴィラへ',photo:'📍 ヴィラ 16:14（1-2カット）',room:'檜風呂',day2car:'イワトモcar',day2course:'美術館',lunch:'✅ 参加予定',lunchMenu:'信州サーモン',drink:'ビール・ノンアル' },
+  'Minami':     { ki:'3期',yaku:'★',status:'両日宿泊',allergy:'—',arrival:'14:15or15:22 軽井沢駅（電車 or 車）',team:'チェックイン後到着組',car:'TAXI',carFrom:'軽井沢駅からタクシーでヴィラへ',photo:'📍 ヴィラ 16:22（1-2カット）',room:'足湯棟',day2car:'わかなcar',day2course:'旧軽井沢',lunch:'✅ 参加予定',lunchMenu:'信州サーモン',drink:'ノンアル・お茶' },
+  'nozomi':     { ki:'3期',yaku:'🍳',status:'両日宿泊',allergy:'🚨 鯖・にしん',arrival:'10:32 軽井沢駅（はくたか557号）',team:'買い出し組',car:'なかcar（ドライバー：なか）',carFrom:'ツルヤ御代田から出発',photo:'📍 ヴィラ 16:30（1-2カット）',room:'サウナ棟',day2car:'なかcar',day2course:'旧軽井沢',lunch:'✅ 参加予定',lunchMenu:'蓼科高原ポーク',drink:'チューハイ・ノンアル・水・お茶' },
+  'Erika':      { ki:'3期',yaku:'🚙',status:'両日宿泊',allergy:'—',arrival:'11時前 軽井沢（車）',team:'3期ランチ会組',car:'Erika car（ドライバー：自分）',carFrom:'ピエトリーノ方面からヴィラへ',photo:'撮影なし',room:'檜風呂',day2car:'Erika car',day2course:'旧軽井沢',lunch:'✅ 参加予定',lunchMenu:'信州サーモン',drink:'未回答' },
+  'ゆうちゃん': { ki:'1期',yaku:'',status:'両日 日帰り参加',allergy:'—',arrival:'Tomoki carでハルニレテラスへ（12時頃）',team:'ハルニレテラス組',car:'NAMI car（ドライバー：NAMIちゃん）',carFrom:'Tomoki carで軽井沢へ → ハルニレで降車・撮影 → NAMI carでヴィラへ',photo:'📍 ハルニレテラス 11:40（5-6カット）',room:'日帰りのため なし',day2course:'美術館',day2car:'イワトモcar',lunch:'✅ 参加予定',lunchMenu:'信州サーモン',drink:'ビール・スパークリング・お茶' },
   'おまめさん': { ki:'3期',yaku:'🍳🚙',status:'6日のみ日帰り',allergy:'—',arrival:'12:00 ツルヤ御代田（車）',team:'買い出し組',car:'おまめcar（ドライバー：自分）',carFrom:'ピエトリーノ方面からヴィラへ',photo:'📍 ヴィラ 14:10（1-2カット）',room:'日帰りのため なし',day2course:'不参加',lunch:'❌ 不参加（日帰り）',lunchMenu:'—',drink:'お茶' },
-  'あやや':     { ki:'2期',yaku:'',status:'6日のみ日帰り',allergy:'—',arrival:'12時頃 軽井沢（Tomoki車に同乗）',team:'ハルニレテラス組',car:'イワトモcar（ドライバー：イワトモ）',carFrom:'ハルニレテラスから出発',photo:'📍 ハルニレテラス 12:20（5-6カット）',room:'日帰りのため なし',day2course:'不参加',lunch:'❌ 不参加（日帰り）',lunchMenu:'—',drink:'ビール・赤ワイン・白ワイン・スパークリング' },
+  'あやや':     { ki:'2期',yaku:'',status:'6日のみ日帰り',allergy:'—',arrival:'Tomoki carでハルニレテラスへ（12時頃）',team:'ハルニレテラス組',car:'イワトモcar（ドライバー：イワトモ）',carFrom:'Tomoki carで軽井沢へ → ハルニレで降車・撮影 → イワトモ carでヴィラへ',photo:'📍 ハルニレテラス 12:20（5-6カット）',room:'日帰りのため なし',day2course:'不参加',lunch:'❌ 不参加（日帰り）',lunchMenu:'—',drink:'ビール・赤ワイン・白ワイン・スパークリング' },
 };
 
-const order = ['リエ','イワトモ','なか','わか','さっきー','わだちゃん','まめちゃん','NAMIちゃん','たか','よっしー','Tomoki','みなこちゃん','おつね','ちえっぴ','さーや','Mika','みかん','しほママ','mayumi','くるみん','みづき','ロールパンナ','しお','いく','tan','なるみん','Minami','nozomi','Erika','ゆうちゃん','おまめさん','あやや'];
+const order = ['リエ','イワトモ','なか','わか','さっきー','わだちゃん','まめちゃん','NAMIちゃん','たか','よっしー','Tomoki','みなこちゃん','おつね','ちえっぴ','Mika','みかん','しほママ','mayumi','くるみん','みづき','ロールパンナ','しお','いく','tan','なるみん','Minami','nozomi','Erika','ゆうちゃん','おまめさん','あやや'];
 
 const labels = [
   ['🚃 到着','arrival'],['🌳 チーム','team'],['🚙 ヴィラまでの車','car'],['📍 出発地点','carFrom'],
   ['📷 撮影','photo'],['🏠 部屋','room'],['🌿 アレルギー','allergy'],
-  ['🌄 2日目コース','day2course'],['🍽️ 2日目ランチ','lunch'],['🍱 ランチメニュー','lunchMenu'],['🥂 飲み物（夕食）','drink']
+  ['🌄 2日目コース','day2course'],['🚙 2日目配車','day2car'],['🍽️ 2日目ランチ','lunch'],['🍱 ランチメニュー','lunchMenu'],['🥂 飲み物（夕食）','drink']
 ];
 
 const grid = document.getElementById('nameGrid');
