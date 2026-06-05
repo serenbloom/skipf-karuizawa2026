@@ -179,7 +179,7 @@ tr:last-child td{border-bottom:none;}
   <h1>Skip F 軽井沢合宿</h1>
   <div class="sub">しおり</div>
   <div class="dates">2026年6月6日（土）〜 7日（日）</div>
-  <div id="coverWeather" style="margin-top:10px;font-size:.82em;opacity:.9;display:flex;justify-content:center;gap:20px;"></div>
+  <div id="coverWeather" style="margin-top:10px;font-size:.82em;opacity:.9;display:flex;flex-wrap:wrap;justify-content:center;gap:8px;"></div>
   
 </div>
 
@@ -878,11 +878,16 @@ function closeCard() {
     const r = await fetch('https://api.open-meteo.com/v1/forecast?latitude=36.35&longitude=138.59&daily=temperature_2m_max,temperature_2m_min,weathercode&timezone=Asia%2FTokyo&start_date=2026-06-06&end_date=2026-06-07');
     const d = (await r.json()).daily;
     const labels = ['6/6','6/7'];
-    document.getElementById('coverWeather').innerHTML = [0,1].map(i=>
-      `<span style="background:rgba(0,0,0,.45);border-radius:20px;padding:4px 14px;">
-        <span style="font-weight:700;">${labels[i]}</span>　${wmo(d.weathercode[i])}　<span style="color:#ffcdd2;">${Math.round(d.temperature_2m_max[i])}℃</span>/<span style="color:#bbdefb;">${Math.round(d.temperature_2m_min[i])}℃</span>
-      </span>`
-    ).join('');
+    var html = '<div style="font-size:.75em;opacity:.8;margin-bottom:5px;text-align:center;width:100%;">📍 軽井沢の天気予報（Open-Meteo）</div>';
+    for(var i=0;i<2;i++){
+      html += '<span style="background:rgba(0,0,0,.45);border-radius:20px;padding:4px 14px;">'
+            + '<b>' + labels[i] + '</b>　'
+            + wmo(d.weathercode[i]) + '　'
+            + '<span style="color:#ffcdd2;">' + Math.round(d.temperature_2m_max[i]) + '℃</span>'
+            + '/<span style="color:#bbdefb;">' + Math.round(d.temperature_2m_min[i]) + '℃</span>'
+            + '</span>';
+    }
+    document.getElementById('coverWeather').innerHTML = html;
   } catch(e) {}
 })();
 </script>
