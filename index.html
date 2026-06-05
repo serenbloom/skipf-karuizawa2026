@@ -179,6 +179,7 @@ tr:last-child td{border-bottom:none;}
   <h1>Skip F 軽井沢合宿</h1>
   <div class="sub">しおり</div>
   <div class="dates">2026年6月6日（土）〜 7日（日）</div>
+  <div id="coverWeather" style="margin-top:10px;font-size:.82em;opacity:.9;display:flex;justify-content:center;gap:20px;"></div>
   
 </div>
 
@@ -248,7 +249,7 @@ tr:last-child td{border-bottom:none;}
         </td>
         <td class="td-k">
           <div class="pe">🚗 出発・移動中</div>
-          <div class="pn">なか（新潟）・Tomoki（埼玉）・ロールパンナ（長野）・nozomi（栃木）・おまめさん（神奈川）がそれぞれ出発</div>
+          <div class="pn">なか（新潟）・Tomoki（埼玉）・ロールパンナ（長野）・nozomi（栃木）・おまめさん（神奈川）がそれぞれ出発<br><span class="pno">nozomiはロールパンナcarに同乗してツルヤへ</span></div>
         </td>
         <td class="td-l">
           <div class="pe">🚃/🚙 移動中</div>
@@ -348,6 +349,7 @@ tr:last-child td{border-bottom:none;}
 <!-- ===== 配車 ===== -->
 <div class="section" id="car">
   <div class="section-title" style="color:var(--peach-dark)"><span>🚙</span>到着ルート・配車</div>
+  <div class="note" style="margin-bottom:16px;background:var(--peach-bg);border-left-color:var(--peach);"><strong>🙏 ドライバーの皆さん、ありがとうございます！</strong><br>自家用車でお越しいただき、同乗者の送迎までご協力いただけること、心より感謝申し上げます。無理のない範囲でどうぞよろしくお願いします🌿</div>
 
   <div class="car-h">🌳 ハルニレテラス組 → ヴィラ</div>
   <div class="note" style="margin-bottom:12px;font-size:.83em;background:var(--sage-bg);border-left-color:var(--sage);">
@@ -858,6 +860,31 @@ function closeCard() {
   card.classList.remove('show');
   document.querySelectorAll('.name-btn').forEach(b => b.classList.remove('active'));
 }
+</script>
+<script>
+(async () => {
+  const wmo = t => {
+    if(t===0) return '☀️ 快晴';
+    if(t<=2) return '⛅ 晴れ時々曇り';
+    if(t===3) return '☁️ 曇り';
+    if(t<=49) return '🌫 霧';
+    if(t<=69) return '🌧 雨';
+    if(t<=79) return '🌨 雪';
+    if(t<=82) return '🌦 にわか雨';
+    if(t<=99) return '⛈ 雷雨';
+    return '—';
+  };
+  try {
+    const r = await fetch('https://api.open-meteo.com/v1/forecast?latitude=36.35&longitude=138.59&daily=temperature_2m_max,temperature_2m_min,weathercode&timezone=Asia%2FTokyo&start_date=2026-06-06&end_date=2026-06-07');
+    const d = (await r.json()).daily;
+    const labels = ['6/6','6/7'];
+    document.getElementById('coverWeather').innerHTML = [0,1].map(i=>
+      `<span style="background:rgba(0,0,0,.45);border-radius:20px;padding:4px 14px;">
+        <span style="font-weight:700;">${labels[i]}</span>　${wmo(d.weathercode[i])}　<span style="color:#ffcdd2;">${Math.round(d.temperature_2m_max[i])}℃</span>/<span style="color:#bbdefb;">${Math.round(d.temperature_2m_min[i])}℃</span>
+      </span>`
+    ).join('');
+  } catch(e) {}
+})();
 </script>
 </body>
 </html>
